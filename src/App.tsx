@@ -20,6 +20,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Products from "./pages/Products";
+import ProductCategory from "./pages/ProductCategory";
+import ProductSubcategory from "./pages/ProductSubcategory";
 import ProductDetail from "./pages/ProductDetail";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
@@ -38,6 +40,8 @@ function AnimatedRoutes() {
         <Route path="/services" component={Services} />
         <Route path="/services/:id" component={ServiceDetail} />
         <Route path="/products" component={Products} />
+        <Route path="/products/category/:categoryId" component={ProductCategory} />
+        <Route path="/products/category/:categoryId/:subcategoryId" component={ProductSubcategory} />
         <Route path="/products/:id" component={ProductDetail} />
         <Route path="/projects" component={Projects} />
         <Route path="/contact" component={Contact} />
@@ -57,7 +61,7 @@ function App() {
           <ScrollToTop />
           <FloatingWhatsApp />
           <FloatingEmail />
-          
+
           <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-grow">

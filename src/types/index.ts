@@ -11,8 +11,10 @@ export interface Service {
 export interface Product {
   id: string;
   name: string;
-  categoryId: string;
+  category: string;
+  subcategory: string;
   categoryName: string;
+  subcategoryName: string;
   shortDescription: string;
   description: string;
   image: string;
@@ -20,6 +22,22 @@ export interface Product {
   features: string[];
   specifications: Record<string, string>;
   applications: string[];
+}
+
+export interface ProductCategory {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  subcategories: ProductSubcategory[];
+}
+
+export interface ProductSubcategory {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  categoryId: string;
 }
 
 export interface Project {

@@ -1,0 +1,294 @@
+IMPORTANT: Work on the existing project codebase only.
+
+The project is already imported from GitHub and contains a working ArtChem website.
+
+DO NOT create a new project.
+DO NOT rebuild the website from scratch.
+DO NOT replace the current architecture.
+
+Analyze the existing codebase first, then improve and extend it.
+
+==================================================
+PROJECT GOAL
+============
+
+ArtChem operates in the same industry as AramChem.
+
+Reference website for content structure and business direction:
+https://aramchemeg.com/
+
+However, ArtChem must have its own visual identity, layout, user experience, and design language.
+
+I want a completely different website experience from AramChem while keeping the same business domain and product categories.
+
+==================================================
+BRANDING
+========
+
+Use the existing ArtChem logo already present in the project as the main branding source.
+
+IMPORTANT:
+
+Do NOT invent a new color palette.
+
+Analyze the logo and extract all branding colors directly from it.
+
+The entire website should be designed around the logo.
+
+Use the logo colors consistently for:
+
+* Buttons
+* Hover effects
+* Icons
+* Navigation highlights
+* Section accents
+* Cards
+* Decorative elements
+
+The final website should feel like it was designed specifically for the uploaded ArtChem logo.
+
+==================================================
+DESIGN DIRECTION
+================
+
+The website should look:
+
+* Premium
+* Modern
+* Corporate
+* International
+* Industrial
+* Trustworthy
+
+Target industries:
+
+* Industrial Chemicals
+* Epoxy Systems
+* Powder Products
+* Construction Chemicals
+* Contracting
+* Import & Export
+* Industrial Supplies
+
+==================================================
+LAYOUT IMPROVEMENTS
+===================
+
+Improve all sections visually.
+
+Use:
+
+* Better spacing
+* Better typography
+* Better hierarchy
+* Better responsiveness
+* Better visual consistency
+
+The website should feel similar to modern international industrial companies.
+
+==================================================
+BACKGROUND RULES
+================
+
+Avoid dark sections.
+
+Use:
+
+* White backgrounds
+* Very light gray backgrounds
+* Soft neutral backgrounds
+
+Do not use black section backgrounds.
+
+The website should feel bright and professional.
+
+==================================================
+NAVBAR
+======
+
+Keep the current logo.
+
+Make sure the logo is properly aligned.
+
+Improve spacing.
+
+Keep navigation clean and professional.
+
+Add elegant hover effects using colors extracted from the logo.
+
+==================================================
+FOOTER
+======
+
+Improve the footer.
+
+Requirements:
+
+* Smaller social media icons
+* Better spacing
+* Better visual hierarchy
+* Professional layout
+* Consistent branding
+
+The footer should feel premium and clean.
+
+==================================================
+PRODUCTS SECTION
+================
+
+Completely restructure the Products section.
+
+Create 2 main categories:
+
+1. POWDER
+2. EPOXY
+
+==================================================
+EPOXY CATEGORY
+==============
+
+Create 4 subcategories:
+
+* Resin
+* Hardener
+* Accelerators
+* Additives
+
+Each subcategory should support multiple products.
+
+==================================================
+POWDER CATEGORY
+===============
+
+Create 2 subcategories.
+
+Each subcategory should support multiple products.
+
+==================================================
+PRODUCT DATA STRUCTURE
+======================
+
+Create a dedicated data file:
+
+src/data/products.ts
+
+All products must be managed from this file.
+
+DO NOT hardcode products inside components.
+
+Each product should contain:
+
+* id
+* name
+* image
+* shortDescription
+* category
+* subcategory
+
+The system must allow future product additions by editing only the data file.
+
+==================================================
+PRODUCT PAGES
+=============
+
+Create dynamic category pages.
+
+Flow:
+
+Products
+
+→ Powder
+
+→ Powder Category
+
+→ Products
+
+Products
+
+→ Epoxy
+
+→ Resin / Hardener / Accelerators / Additives
+
+→ Products
+
+==================================================
+PRODUCT CARDS
+=============
+
+Each card should contain:
+
+* Product Image
+* Product Name
+* Short Description
+* WhatsApp Inquiry Button
+
+Use placeholder industrial chemical images where necessary.
+
+==================================================
+WHATSAPP INQUIRY
+================
+
+When clicking a product inquiry button:
+
+Open WhatsApp automatically with the selected product name prefilled.
+
+Example:
+
+Hello,
+I would like to inquire about:
+[Product Name]
+
+Please send more information.
+
+==================================================
+ANIMATIONS
+==========
+
+Use Framer Motion.
+
+Add:
+
+* Fade animations
+* Scroll animations
+* Hover animations
+* Smooth transitions
+
+Keep everything professional and subtle.
+
+==================================================
+RESPONSIVE DESIGN
+=================
+
+Fully optimize for:
+
+* Mobile
+* Tablet
+* Desktop
+
+==================================================
+CODE QUALITY
+============
+
+Keep the existing project structure.
+
+Refactor where necessary.
+
+Use reusable components.
+
+Use clean TypeScript.
+
+Keep the code maintainable.
+
+==================================================
+IMPORTANT
+=========
+
+Do not rebuild the project.
+
+Do not remove existing functionality.
+
+Do not replace the current architecture.
+
+Improve and extend the current website while preserving the existing codebase.
+
+The final result should feel like a premium international chemical company website designed specifically around the existing ArtChem logo and branding.

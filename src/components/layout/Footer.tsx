@@ -1,15 +1,13 @@
-import { useState } from "react";
 import { Link } from "wouter";
 import { companyInfo } from "../../data/companyInfo";
 import { navigation } from "../../data/navigation";
 import { socialLinks } from "../../data/socialLinks";
-import { services } from "../../data/services";
-import aramchemLogo from "../../assets/images/mainlogo.png";
+import { productCategories } from "../../data/categories";
+import artchemLogo from "../../assets/images/mainlogo.png";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import * as SiIcons from "react-icons/si";
 
-function SocialIcon({ social }: { social: typeof socialLinks[0] }) {
-  const [hovered, setHovered] = useState(false);
+function SocialIconCompact({ social }: { social: typeof socialLinks[0] }) {
   const Icon = SiIcons[social.icon as keyof typeof SiIcons];
 
   return (
@@ -18,29 +16,10 @@ function SocialIcon({ social }: { social: typeof socialLinks[0] }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={social.name}
-      data-testid={`link-social-${social.id}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       title={social.name}
-      className="flex flex-col items-center gap-1.5 group"
-      style={{ textDecoration: "none" }}
+      className="group flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200 border border-white/10 hover:border-white/25"
     >
-      <div
-        className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-250"
-        style={{
-          backgroundColor: hovered ? social.baseColor : "rgba(255,255,255,0.12)",
-          transform: hovered ? "translateY(-3px)" : "translateY(0)",
-          boxShadow: hovered ? `0 6px 20px ${social.baseColor}50` : "none",
-        }}
-      >
-        {Icon && <Icon size={17} className="text-white" />}
-      </div>
-      <span
-        className="text-[9px] font-semibold tracking-wider uppercase"
-        style={{ color: hovered ? "#fff" : "rgba(255,255,255,0.45)" }}
-      >
-        {social.name}
-      </span>
+      {Icon && <Icon size={14} className="text-white/70 group-hover:text-white transition-colors" />}
     </a>
   );
 }
@@ -49,47 +28,42 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-sidebar text-sidebar-foreground pt-16 pb-8 border-t-[3px] border-primary">
+    <footer className="bg-sidebar text-sidebar-foreground pt-14 pb-6 border-t-[3px] border-primary">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
 
           {/* Brand Column */}
-          <div className="space-y-2">
-            {/* Transparent logo on dark navy footer */}
+          <div className="space-y-4">
             <img
-              src={aramchemLogo}
+              src={artchemLogo}
               alt={companyInfo.name}
-              className="h-18 w-auto "
-              
+              className="h-14 w-auto"
             />
-            <p className="text-sidebar-accent-foreground leading-relaxed ">
+            <p className="text-sidebar-accent-foreground leading-relaxed text-sm">
               {companyInfo.description}
             </p>
-            {/* Social icons — elegant, compact */}
-            <div className="flex gap-3 pt-1 flex-wrap">
+            {/* Social icons — compact row */}
+            <div className="flex gap-2 pt-1">
               {socialLinks.map((social) => (
-                <SocialIcon key={social.id} social={social} />
+                <SocialIconCompact key={social.id} social={social} />
               ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-[11px] font-bold text-white/90 mb-5 uppercase tracking-[0.2em] relative inline-block">
+            <h3 className="text-[10px] font-bold text-white/90 mb-5 uppercase tracking-[0.22em] relative inline-block">
               Quick Links
-              <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-primary" />
+              <span className="absolute -bottom-2 left-0 w-6 h-[2px] bg-primary" />
             </h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {navigation.map((item) => (
                 <li key={item.route}>
                   <Link href={item.route}>
-                    <span
-                      data-testid={`link-footer-nav-${item.label.toLowerCase()}`}
-                      className="text-sidebar-accent-foreground hover:text-white transition-colors flex items-center gap-2 text-sm cursor-pointer group"
-                    >
+                    <span className="text-sidebar-accent-foreground hover:text-white transition-colors flex items-center gap-2 text-sm cursor-pointer group">
                       <ArrowRight
-                        size={12}
-                        className="text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200"
+                        size={11}
+                        className="text-primary/60 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200 shrink-0"
                       />
                       {item.label}
                     </span>
@@ -99,27 +73,36 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Products */}
           <div>
-            <h3 className="text-[11px] font-bold text-white/90 mb-5 uppercase tracking-[0.2em] relative inline-block">
-              Our Services
-              <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-primary" />
+            <h3 className="text-[10px] font-bold text-white/90 mb-5 uppercase tracking-[0.22em] relative inline-block">
+              Products
+              <span className="absolute -bottom-2 left-0 w-6 h-[2px] bg-primary" />
             </h3>
-            <ul className="space-y-2.5">
-              {services.slice(0, 5).map((service) => (
-                <li key={service.id}>
-                  <Link href={`/services/${service.id}`}>
-                    <span
-                      data-testid={`link-footer-service-${service.id}`}
-                      className="text-sidebar-accent-foreground hover:text-white transition-colors flex items-center gap-2 text-sm cursor-pointer group"
-                    >
+            <ul className="space-y-2">
+              {productCategories.map((cat) => (
+                <li key={cat.id}>
+                  <Link href={`/products/category/${cat.id}`}>
+                    <span className="text-sidebar-accent-foreground hover:text-white transition-colors flex items-center gap-2 text-sm cursor-pointer group">
                       <ArrowRight
-                        size={12}
-                        className="text-primary/70 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200"
+                        size={11}
+                        className="text-primary/60 group-hover:text-primary group-hover:translate-x-0.5 transition-all duration-200 shrink-0"
                       />
-                      {service.title}
+                      {cat.name}
                     </span>
                   </Link>
+                  <ul className="ml-4 mt-1 space-y-1">
+                    {cat.subcategories.map((sub) => (
+                      <li key={sub.id}>
+                        <Link href={`/products/category/${cat.id}/${sub.id}`}>
+                          <span className="text-sidebar-accent-foreground/60 hover:text-white/80 transition-colors flex items-center gap-1.5 text-xs cursor-pointer">
+                            <span className="w-1 h-1 rounded-full bg-primary/40 shrink-0" />
+                            {sub.name}
+                          </span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </li>
               ))}
             </ul>
@@ -127,33 +110,35 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-[11px] font-bold text-white/90 mb-5 uppercase tracking-[0.2em] relative inline-block">
+            <h3 className="text-[10px] font-bold text-white/90 mb-5 uppercase tracking-[0.22em] relative inline-block">
               Contact Us
-              <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-primary" />
+              <span className="absolute -bottom-2 left-0 w-6 h-[2px] bg-primary" />
             </h3>
-            <ul className="space-y-3.5">
+            <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sidebar-accent-foreground text-sm">
-                <MapPin className="text-primary shrink-0 mt-0.5" size={14} />
+                <MapPin className="text-primary shrink-0 mt-0.5" size={13} />
                 <span className="leading-relaxed">{companyInfo.address}</span>
               </li>
               <li className="flex items-center gap-3 text-sidebar-accent-foreground text-sm">
-                <Phone className="text-primary shrink-0" size={14} />
-                <a href={`tel:${companyInfo.phone.replace(/[^0-9+]/g, "")}`}
+                <Phone className="text-primary shrink-0" size={13} />
+                <a
+                  href={`tel:${companyInfo.phone.replace(/[^0-9+]/g, "")}`}
                   className="hover:text-white transition-colors"
-                  data-testid="link-footer-phone">
+                >
                   {companyInfo.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sidebar-accent-foreground text-sm">
-                <Mail className="text-primary shrink-0" size={14} />
-                <a href={`mailto:${companyInfo.email}`}
+                <Mail className="text-primary shrink-0" size={13} />
+                <a
+                  href={`mailto:${companyInfo.email}`}
                   className="hover:text-white transition-colors"
-                  data-testid="link-footer-email">
+                >
                   {companyInfo.email}
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sidebar-accent-foreground text-sm">
-                <Clock className="text-primary shrink-0 mt-0.5" size={14} />
+                <Clock className="text-primary shrink-0 mt-0.5" size={13} />
                 <span className="leading-relaxed">{companyInfo.workingHours}</span>
               </li>
             </ul>
@@ -161,11 +146,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/8 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-sidebar-accent-foreground text-xs tracking-wide text-center md:text-left opacity-70">
+        <div className="border-t border-white/8 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-sidebar-accent-foreground text-xs tracking-wide text-center sm:text-left opacity-60">
             &copy; {currentYear} {companyInfo.fullName}. All rights reserved.
           </p>
-          <div className="flex gap-5 text-xs text-sidebar-accent-foreground opacity-60">
+          <div className="flex gap-5 text-xs text-sidebar-accent-foreground opacity-50">
             <a href="#" className="hover:opacity-100 hover:text-white transition-all">Privacy Policy</a>
             <a href="#" className="hover:opacity-100 hover:text-white transition-all">Terms of Service</a>
           </div>

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { navigation } from "../../data/navigation";
-import aramchemLogo from "../../assets/images/mainlogo.png";
+import artchemLogo from "../../assets/images/mainlogo.png";
 import { Button } from "../ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { companyInfo } from "../../data/companyInfo";
@@ -23,45 +23,50 @@ export function Navbar() {
 
   const navBg = isTransparent
     ? "bg-transparent"
-    : "bg-white shadow-[0_1px_12px_rgba(0,0,0,0.07)]";
+    : "bg-white/95 backdrop-blur-sm shadow-[0_1px_16px_rgba(0,0,0,0.06)] border-b border-gray-100";
 
   return (
     <>
       <header className={`fixed top-0 w-full z-40 transition-all duration-300 ${navBg}`}>
         <div className="container mx-auto px-6 h-[72px] flex items-center justify-between">
 
-          {/* Logo — clean transparent PNG, no borders, no background */}
+          {/* Logo */}
           <Link href="/">
             <div className="cursor-pointer flex-shrink-0 leading-none">
               <img
-                src={aramchemLogo}
+                src={artchemLogo}
                 alt={companyInfo.name}
-                className="h-[60px] md:h-[100px] w-auto object-contain block"
+                className="h-[52px] md:h-[64px] w-auto object-contain block"
                 style={{ imageRendering: "auto" }}
               />
             </div>
           </Link>
 
-          {/* Desktop nav — vertically centered, same baseline as logo */}
+          {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-0">
             {navigation.map((item) => {
-              const isActive = location === item.route;
+              const isActive = location === item.route || (item.route !== "/" && location.startsWith(item.route));
               return (
                 <Link key={item.route} href={item.route}>
                   <span
-                    className={`relative inline-flex items-center px-4 h-[72px] text-[11.5px] font-semibold tracking-[0.1em] uppercase transition-colors duration-200 cursor-pointer
+                    className={`relative inline-flex items-center px-4 h-[72px] text-[11px] font-bold tracking-[0.1em] uppercase transition-colors duration-200 cursor-pointer
                       ${isActive
                         ? "text-primary"
                         : isTransparent
                           ? "text-white/80 hover:text-white"
-                          : "text-foreground/60 hover:text-foreground"
+                          : "text-foreground/55 hover:text-foreground"
                       }`}
                   >
                     {item.label}
+                    {/* Active underline */}
                     <span
-                      className={`absolute bottom-0 left-4 right-4 h-[2px] bg-primary transition-all duration-250 origin-left
-                        ${isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100"}`}
+                      className={`absolute bottom-0 left-4 right-4 h-[2.5px] bg-primary rounded-t transition-all duration-250 origin-left
+                        ${isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"}`}
                     />
+                    {/* Hover underline */}
+                    {!isActive && (
+                      <span className="absolute bottom-0 left-4 right-4 h-[2.5px] bg-primary/50 rounded-t scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-200" />
+                    )}
                   </span>
                 </Link>
               );
@@ -69,7 +74,7 @@ export function Navbar() {
             <Button
               asChild
               size="sm"
-              className="ml-5 px-6 h-9 text-[11px] font-bold tracking-[0.1em] uppercase rounded-none bg-primary text-white hover:bg-primary/90 transition-colors duration-200 shadow-none"
+              className="ml-6 px-6 h-9 text-[10px] font-bold tracking-[0.12em] uppercase rounded-sm bg-primary text-white hover:bg-primary/90 transition-colors duration-200 shadow-none border-0"
             >
               <Link href="/contact">GET A QUOTE</Link>
             </Button>
@@ -107,9 +112,9 @@ export function Navbar() {
             >
               <div className="px-6 py-4 flex items-center justify-between border-b border-gray-100">
                 <img
-                  src={aramchemLogo}
+                  src={artchemLogo}
                   alt={companyInfo.name}
-                  className="h-[36px] w-auto object-contain block"
+                  className="h-[38px] w-auto object-contain block"
                 />
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -130,11 +135,11 @@ export function Navbar() {
                     <Link href={item.route}>
                       <span
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className={`flex items-center justify-between px-6 py-3.5 text-[11.5px] font-semibold uppercase tracking-wider cursor-pointer transition-colors border-b border-gray-50
+                        className={`flex items-center justify-between px-6 py-3.5 text-[11px] font-bold uppercase tracking-wider cursor-pointer transition-colors border-b border-gray-50
                           ${location === item.route ? "text-primary bg-primary/5" : "text-foreground/70 hover:bg-muted hover:text-primary"}`}
                       >
                         {item.label}
-                        <ChevronRight size={14} className="text-muted-foreground" />
+                        <ChevronRight size={13} className="text-muted-foreground" />
                       </span>
                     </Link>
                   </motion.div>
@@ -142,13 +147,13 @@ export function Navbar() {
               </div>
 
               <div className="px-6 py-5 bg-gray-50 border-t border-gray-100">
-                <div className="space-y-1 mb-4">
+                <div className="space-y-0.5 mb-4">
                   <p className="text-xs text-muted-foreground">{companyInfo.phone}</p>
                   <p className="text-xs text-muted-foreground">{companyInfo.email}</p>
                 </div>
                 <Button
                   asChild
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold tracking-wider text-xs uppercase rounded-none h-10 shadow-none"
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-bold tracking-wider text-[10px] uppercase rounded-sm h-10 shadow-none border-0"
                 >
                   <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     GET A QUOTE

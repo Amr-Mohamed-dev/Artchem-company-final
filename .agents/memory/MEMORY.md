@@ -1,0 +1,1 @@
+- [ArtChem Product Structure](artchem-products.md) — Products use category/subcategory (not categoryId), with EPOXY+POWDER as main categories.

@@ -6,7 +6,7 @@ import { companyInfo } from "../data/companyInfo";
 import { openWhatsAppInquiry } from "../utils/whatsapp";
 import { pageTransition, fadeInUp, staggerContainer } from "../utils/animations";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, MessageCircle, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, MessageCircle, CheckCircle2, ChevronRight } from "lucide-react";
 import { ProductCard } from "../components/products/ProductCard";
 
 export default function ProductDetail() {
@@ -25,7 +25,9 @@ export default function ProductDetail() {
     );
   }
 
-  const relatedProducts = products.filter(p => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4);
+  const relatedProducts = products
+    .filter((p) => p.category === product.category && p.subcategory === product.subcategory && p.id !== product.id)
+    .slice(0, 4);
 
   return (
     <motion.div
@@ -33,45 +35,62 @@ export default function ProductDetail() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="pt-20 bg-background min-h-screen"
+      className="pt-[72px] bg-white min-h-screen"
     >
-      <div className="container mx-auto px-4 py-12">
-        <Link href="/products">
-          <span className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8 cursor-pointer text-sm font-bold tracking-wider uppercase">
-            <ArrowLeft size={16} className="mr-2" /> Back to Catalog
-          </span>
-        </Link>
+      {/* Breadcrumb header */}
+      <div className="bg-[#F5F7FA] border-b border-gray-200 py-5">
+        <div className="container mx-auto px-6">
+          <nav className="flex items-center gap-2 text-xs text-muted-foreground uppercase tracking-widest font-semibold flex-wrap">
+            <Link href="/products">
+              <span className="hover:text-primary transition-colors cursor-pointer">Products</span>
+            </Link>
+            <ChevronRight size={11} />
+            <Link href={`/products/category/${product.category}`}>
+              <span className="hover:text-primary transition-colors cursor-pointer">{product.categoryName}</span>
+            </Link>
+            <ChevronRight size={11} />
+            <Link href={`/products/category/${product.category}/${product.subcategory}`}>
+              <span className="hover:text-primary transition-colors cursor-pointer">{product.subcategoryName}</span>
+            </Link>
+            <ChevronRight size={11} />
+            <span className="text-foreground/60 font-normal normal-case tracking-normal truncate max-w-[200px]">{product.name}</span>
+          </nav>
+        </div>
+      </div>
 
+      <div className="container mx-auto px-6 py-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
           {/* Images */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="flex flex-col gap-4"
           >
-            <div className="aspect-square rounded-xl bg-white border border-border p-8 flex items-center justify-center overflow-hidden">
+            <div className="aspect-square rounded-2xl bg-gray-50 border border-gray-200 overflow-hidden">
               <AnimatePresence mode="wait">
-                <motion.img 
+                <motion.img
                   key={activeImage}
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.1 }}
+                  exit={{ opacity: 0, scale: 1.04 }}
                   transition={{ duration: 0.3 }}
-                  src={product.gallery[activeImage] || product.image} 
+                  src={product.gallery[activeImage] || product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain mix-blend-multiply"
+                  className="w-full h-full object-cover"
                 />
               </AnimatePresence>
             </div>
             {product.gallery.length > 1 && (
-              <div className="flex gap-4 overflow-x-auto pb-2">
+              <div className="flex gap-3 overflow-x-auto pb-2">
                 {product.gallery.map((img, idx) => (
-                  <button 
+                  <button
                     key={idx}
                     onClick={() => setActiveImage(idx)}
-                    className={`w-24 h-24 rounded bg-white border-2 p-2 shrink-0 transition-all ${activeImage === idx ? "border-primary" : "border-border hover:border-primary/50"}`}
+                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 shrink-0 transition-all ${
+                      activeImage === idx ? "border-primary shadow-md" : "border-gray-200 hover:border-primary/50"
+                    }`}
                   >
-                    <img src={img} alt="" className="w-full h-full object-contain mix-blend-multiply" />
+                    <img src={img} alt="" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
@@ -79,65 +98,79 @@ export default function ProductDetail() {
           </motion.div>
 
           {/* Info */}
-          <motion.div 
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >
-            <motion.div variants={fadeInUp} className="mb-2">
-              <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+            <motion.div variants={fadeInUp} className="flex items-center gap-2 mb-4 flex-wrap">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white bg-primary px-3 py-1.5 rounded-sm">
                 {product.categoryName}
               </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1.5 rounded-sm">
+                {product.subcategoryName}
+              </span>
             </motion.div>
-            
-            <motion.h1 variants={fadeInUp} className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
+
+            <motion.h1
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl lg:text-[44px] font-heading font-extrabold text-foreground mb-4 leading-tight tracking-tight"
+            >
               {product.name}
             </motion.h1>
-            
-            <motion.p variants={fadeInUp} className="text-xl text-muted-foreground mb-8 leading-relaxed">
+
+            <motion.p variants={fadeInUp} className="text-base text-muted-foreground mb-8 leading-relaxed">
               {product.description}
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="bg-muted rounded-lg p-6 mb-8 border border-border">
-              <h3 className="text-lg font-heading font-bold mb-4">Product Features</h3>
+            {/* Features */}
+            <motion.div
+              variants={fadeInUp}
+              className="bg-[#F5F7FA] rounded-xl p-6 mb-8 border border-gray-200"
+            >
+              <h3 className="text-sm font-bold uppercase tracking-wider text-foreground mb-4">Product Features</h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {product.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <CheckCircle2 size={18} className="text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm font-medium">{feature}</span>
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
+                    <span className="text-sm font-medium text-foreground/80">{feature}</span>
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="flex-1 font-bold tracking-widest h-14"
+            {/* CTA */}
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3">
+              <Button
+                size="lg"
+                className="flex-1 font-bold tracking-widest h-13 rounded-sm text-sm uppercase bg-primary hover:bg-primary/90 text-white shadow-none border-0"
                 onClick={() => openWhatsAppInquiry(product.name, companyInfo.whatsapp)}
               >
-                <MessageCircle size={20} className="mr-2" />
-                REQUEST A QUOTE
+                <MessageCircle size={18} className="mr-2" />
+                Request a Quote
               </Button>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Details Tabs equivalent / Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+        {/* Specs + Applications */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-heading font-bold mb-6 pb-2 border-b-2 border-primary inline-block">Technical Specifications</h3>
-            <div className="bg-white rounded border border-border overflow-hidden">
+            <h3 className="text-xl font-heading font-bold mb-6 flex items-center gap-3">
+              <span className="w-1 h-6 bg-primary rounded-full" />
+              Technical Specifications
+            </h3>
+            <div className="rounded-xl border border-gray-200 overflow-hidden">
               <table className="w-full text-sm text-left">
                 <tbody>
                   {Object.entries(product.specifications).map(([key, value], idx) => (
-                    <tr key={key} className={idx % 2 === 0 ? "bg-muted/50" : "bg-white"}>
-                      <th className="px-6 py-4 font-bold text-foreground border-b border-border/50 w-1/3">{key}</th>
-                      <td className="px-6 py-4 text-muted-foreground border-b border-border/50">{value}</td>
+                    <tr key={key} className={idx % 2 === 0 ? "bg-[#F5F7FA]" : "bg-white"}>
+                      <th className="px-5 py-3.5 font-semibold text-foreground border-b border-gray-100 w-2/5 text-xs uppercase tracking-wide">
+                        {key}
+                      </th>
+                      <td className="px-5 py-3.5 text-muted-foreground border-b border-gray-100 text-sm">
+                        {value}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -150,17 +183,48 @@ export default function ProductDetail() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-heading font-bold mb-6 pb-2 border-b-2 border-primary inline-block">Primary Applications</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xl font-heading font-bold mb-6 flex items-center gap-3">
+              <span className="w-1 h-6 bg-primary rounded-full" />
+              Primary Applications
+            </h3>
+            <ul className="space-y-3">
               {product.applications.map((app, idx) => (
-                <li key={idx} className="flex items-center gap-3 p-4 bg-muted rounded border border-border">
-                  <div className="w-2 h-2 rounded-full bg-accent" />
-                  <span className="font-medium text-foreground">{app}</span>
+                <li
+                  key={idx}
+                  className="flex items-center gap-3 p-4 bg-[#F5F7FA] rounded-xl border border-gray-200 hover:border-primary/30 transition-colors"
+                >
+                  <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                  <span className="font-medium text-sm text-foreground/80">{app}</span>
                 </li>
               ))}
             </ul>
           </motion.div>
         </div>
+
+        {/* WhatsApp Inquiry CTA block */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-[#F5F7FA] border border-gray-200 rounded-2xl p-8 md:p-12 mb-20 flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div>
+            <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
+              Interested in {product.name}?
+            </h3>
+            <p className="text-muted-foreground">
+              Contact us on WhatsApp and our team will respond with full details, pricing, and availability.
+            </p>
+          </div>
+          <Button
+            size="lg"
+            className="shrink-0 h-13 px-8 font-bold tracking-widest text-sm uppercase bg-[#25D366] hover:bg-[#1ebe57] text-white rounded-sm shadow-none border-0 whitespace-nowrap"
+            onClick={() => openWhatsAppInquiry(product.name, companyInfo.whatsapp)}
+          >
+            <MessageCircle size={18} className="mr-2" />
+            WhatsApp Inquiry
+          </Button>
+        </motion.div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
@@ -169,9 +233,12 @@ export default function ProductDetail() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-heading font-bold mb-8 text-center">Related Products</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {relatedProducts.map(p => (
+            <h2 className="text-2xl font-heading font-bold mb-8 flex items-center gap-3">
+              <span className="w-1 h-6 bg-primary rounded-full" />
+              Related Products
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {relatedProducts.map((p) => (
                 <ProductCard key={p.id} product={p} />
               ))}
             </div>
