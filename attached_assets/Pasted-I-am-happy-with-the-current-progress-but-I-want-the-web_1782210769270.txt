@@ -1,0 +1,238 @@
+I am happy with the current progress, but I want the website to feel significantly more premium, modern, and visually impressive.
+
+IMPORTANT:
+Do not rebuild the website.
+Do not remove existing functionality.
+Work on the current codebase and elevate the design quality across all pages.
+
+==================================================
+DESIGN UPGRADE GOAL
+===================
+
+Transform the website into a premium international chemical and industrial corporation website.
+
+Inspiration:
+
+* BASF
+* Dow
+* Henkel Industrial
+* SABIC
+* Sika
+
+The website should feel:
+
+* Premium
+* Corporate
+* International
+* Modern
+* Clean
+* Trustworthy
+* High-end
+
+==================================================
+VISUAL IDENTITY
+===============
+
+Continue using the existing ArtChem logo.
+
+Extract all colors from the logo and use them consistently throughout the website.
+
+Do not introduce random colors.
+
+The entire design should feel built around the logo.
+
+==================================================
+LAYOUT IMPROVEMENTS
+===================
+
+Improve every page layout.
+
+Use:
+
+* Better spacing
+* Larger visual sections
+* More breathing room
+* Better content hierarchy
+* Better typography
+* Better alignment
+
+Avoid crowded layouts.
+
+==================================================
+HERO SECTION
+============
+
+Redesign the hero section completely.
+
+Requirements:
+
+* High-quality chemical industry image
+* Epoxy and industrial chemicals feeling
+* Premium headline
+* Professional CTA buttons
+* Animated statistics cards
+
+Example:
+
+20+ Years Experience
+500+ Products
+100+ Clients
+50+ Projects
+
+Use modern animations and elegant spacing.
+
+==================================================
+BACKGROUND DESIGN
+=================
+
+The website should not feel empty.
+
+Add subtle industrial-inspired design elements:
+
+* Hexagon patterns
+* Chemical molecule inspired graphics
+* Soft geometric elements
+* Light gradients
+* Professional background accents
+
+Keep them subtle and elegant.
+
+==================================================
+ABOUT PAGE
+==========
+
+Upgrade the About section.
+
+Add:
+
+* Mission card
+* Vision card
+* Company values
+* Timeline section
+
+Example:
+
+2010 – Company Founded
+2015 – Import Division Expansion
+2020 – Epoxy Product Line
+2025 – International Supply Network
+
+Use a modern timeline design.
+
+==================================================
+PRODUCTS EXPERIENCE
+===================
+
+Make the products section feel like a professional catalog.
+
+Add:
+
+* Better category navigation
+* Better filtering
+* Better product cards
+* Product detail pages
+* Product inquiry experience
+
+The products area should feel premium and organized.
+
+==================================================
+PRODUCT CARDS
+=============
+
+Use modern cards with:
+
+* Better image presentation
+* Soft shadows
+* Hover animations
+* Smooth transitions
+* Better typography
+
+Cards should feel modern and professional.
+
+==================================================
+WHY CHOOSE US
+=============
+
+Redesign this section using modern Bento Grid layouts.
+
+Example:
+
+Technical Support
+Fast Delivery
+Reliable Supply Chain
+Import & Export Expertise
+Premium Quality
+Industrial Solutions
+
+Make it visually engaging.
+
+==================================================
+INDUSTRIES SECTION
+==================
+
+Use large visual industry cards.
+
+Examples:
+
+* Construction Chemicals
+* Epoxy Systems
+* Waterproofing
+* Industrial Coatings
+* Powder Products
+* Contracting
+
+Use images and modern layouts.
+
+==================================================
+ANIMATIONS
+==========
+
+Use Framer Motion professionally.
+
+Add:
+
+* Fade Up
+* Stagger animations
+* Hover effects
+* Smooth page transitions
+* Scroll reveals
+
+Keep everything elegant and subtle.
+
+==================================================
+FOOTER
+======
+
+Upgrade the footer completely.
+
+Requirements:
+
+* Better layout
+* Better spacing
+* Smaller social icons
+* Better hierarchy
+* Product links
+* Company links
+* Contact information
+
+The footer should feel premium and modern.
+
+==================================================
+RESPONSIVENESS
+==============
+
+Review all pages on:
+
+* Mobile
+* Tablet
+* Desktop
+
+Improve spacing, typography and layouts for all screen sizes.
+
+==================================================
+FINAL GOAL
+==========
+
+When someone visits the website, it should feel like a large international chemical corporation website rather than a standard template.
+
+Focus heavily on premium UI/UX, visual hierarchy, modern layouts, professional animations, and strong branding based on the existing ArtChem logo.

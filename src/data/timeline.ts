@@ -2,28 +2,28 @@ import { TimelineEvent } from "../types";
 
 export const timeline: TimelineEvent[] = [
   {
-    year: "2008",
-    title: "Foundation",
-    description: "ARTCHEM is established as an independent chemical trading entity."
+    year: "2010",
+    title: "Company Founded",
+    description: "ArtChem is established in Cairo as a specialized chemical trading and contracting company, focused on the Egyptian industrial market."
   },
   {
-    year: "2012",
-    title: "International Expansion",
-    description: "Opened regional offices across Europe and Asia, solidifying a global sourcing network."
+    year: "2013",
+    title: "Epoxy Division Launch",
+    description: "Launched a dedicated epoxy systems division, introducing complete resin, hardener, and additive product lines for industrial flooring and coatings."
   },
   {
     year: "2016",
-    title: "Contracting Division Launch",
-    description: "Expanded services to include heavy industrial contracting and project execution."
+    title: "Import & Export Expansion",
+    description: "Established direct partnerships with European and Asian chemical manufacturers, creating a robust international sourcing and distribution network."
   },
   {
     year: "2020",
-    title: "ISO Certification & Quality Control",
-    description: "Launched state-of-the-art testing facilities, achieving global quality certifications."
+    title: "Powder Products Division",
+    description: "Expanded into industrial powder products — calcium carbonate, talc, and silica — serving the paints, plastics, and construction chemicals sectors."
   },
   {
-    year: "2024",
-    title: "Strategic Partnerships",
-    description: "Formed exclusive supply agreements with Fortune 500 industrial manufacturers."
+    year: "2025",
+    title: "International Supply Network",
+    description: "Operating across 15+ countries with a full portfolio of epoxy systems, construction chemicals, and industrial powders, backed by expert technical support."
   }
 ];
