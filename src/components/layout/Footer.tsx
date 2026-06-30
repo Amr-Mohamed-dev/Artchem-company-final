@@ -6,9 +6,12 @@ import { productCategories } from "../../data/categories";
 import artchemLogo from "../../assets/images/mainlogo.png";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import * as SiIcons from "react-icons/si";
+import * as FaIcons from "react-icons/fa6";
 
 function SocialIconCompact({ social }: { social: typeof socialLinks[0] }) {
-  const Icon = SiIcons[social.icon as keyof typeof SiIcons];
+  const Icon =
+  (SiIcons as any)[social.icon] ||
+  (FaIcons as any)[social.icon];
 
   return (
     <a
@@ -33,12 +36,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
 
           {/* Brand Column */}
-          <div className="space-y-4">
-            <img
-              src={artchemLogo}
-              alt={companyInfo.name}
-              className="h-14 w-auto"
-            />
+          <div className="space-y-2">
+          <img
+                src={artchemLogo}
+                alt={companyInfo.name}
+                className="h-[48px] md:h-[88px] w-auto object-contain block"
+                style={{ imageRendering: "auto" }}
+              />
             <p className="text-sidebar-accent-foreground leading-relaxed text-sm">
               {companyInfo.description}
             </p>

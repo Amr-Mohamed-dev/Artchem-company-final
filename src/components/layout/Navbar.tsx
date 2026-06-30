@@ -37,7 +37,7 @@ export function Navbar() {
               <img
                 src={artchemLogo}
                 alt={companyInfo.name}
-                className="h-[48px] md:h-[58px] w-auto object-contain block"
+                className="h-[48px] md:h-[88px] w-auto object-contain block"
                 style={{ imageRendering: "auto" }}
               />
             </div>
