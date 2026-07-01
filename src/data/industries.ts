@@ -1,4 +1,10 @@
 import { Industry } from "../types";
+import Epoxysystems from "../assets/images/Epoxysystems.png";
+import Constructionchemicals from "../assets/images/contracting2.png";
+import Waterproofing from "../assets/images/Waterproofing.png";
+import Industrialcoatings from "../assets/images/Industrial.png";
+import Powderproducts from "../assets/images/Powderproducts.png";
+import Industrialcontracting from "../assets/images/Industrialcontracting.png";
 
 export const industries: Industry[] = [
   {
@@ -13,7 +19,7 @@ export const industries: Industry[] = [
     name: "Construction Chemicals",
     description: "Tile adhesives, grouts, waterproofing compounds, and repair mortars engineered for demanding construction environments.",
     icon: "HardHat",
-    image: "./src/assets/images/contracting2.png"
+    image: Constructionchemicals
   },
   {
     id: "waterproofing",
@@ -27,7 +33,7 @@ export const industries: Industry[] = [
     name: "Industrial Coatings",
     description: "Protective coatings for steel structures, pipelines, marine infrastructure, and industrial facilities requiring chemical and abrasion resistance.",
     icon: "PaintRoller",
-    image: "./src/assets/images/Industrial.png"
+    image: Industrialcoatings
   },
   {
     id: "powder-products",

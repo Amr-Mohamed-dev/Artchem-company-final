@@ -1,4 +1,7 @@
 import { Service } from "../types";
+import Industrial from "../assets/images/Industrial.png";
+import Quality from "../assets/images/quality.png";
+import Logistics from "../assets/images/logistics.png";
 
 export const services: Service[] = [
   {
@@ -16,7 +19,7 @@ export const services: Service[] = [
     shortDescription: "Expert execution of complex industrial and chemical engineering projects.",
     description: "Our contracting division delivers end-to-end industrial solutions, from facility design to full-scale chemical plant construction and retrofitting. We emphasize safety, compliance, and engineering excellence.",
     icon: "Building2",
-    image: "./src/assets/images/contracting.png",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
     features: ["Turnkey Project Execution", "Plant Retrofitting", "Safety & Compliance Engineering", "Maintenance Contracts"]
   },
   {
@@ -34,7 +37,7 @@ export const services: Service[] = [
     shortDescription: "Comprehensive hardware and operational supplies for continuous production.",
     description: "Providing essential hardware, safety equipment, and operational supplies required to keep industrial facilities running at peak efficiency.",
     icon: "Wrench",
-    image: "./src/assets/images/Industrial.png",
+    image: Industrial, 
     features: ["PPE & Safety Gear", "Industrial Hardware", "Maintenance Supplies", "Inventory Management"]
   },
   {
@@ -43,7 +46,7 @@ export const services: Service[] = [
     shortDescription: "Advanced analytical testing and certification for chemical products.",
     description: "State-of-the-art laboratory testing services to verify chemical composition, purity, and performance against international standards.",
     icon: "Microscope",
-    image: "./src/assets/images/quality.png",
+    image: Quality,
     features: ["Purity Analysis", "Performance Testing", "Certification Services", "Batch Verification"]
   },
   {
@@ -52,7 +55,7 @@ export const services: Service[] = [
     shortDescription: "Secure, specialized transport for hazardous and non-hazardous materials.",
     description: "Specialized fleet and warehousing solutions designed specifically for the safe and efficient transport of hazardous and non-hazardous chemical goods.",
     icon: "Truck",
-    image: "./src/assets/images/logistics.png",
+    image: Logistics,
     features: ["Hazmat Transport", "Temperature Controlled Storage", "Fleet Management", "Real-time Tracking"]
   }
 ];

@@ -4,6 +4,7 @@ import { ProjectCard } from "../components/projects/ProjectCard";
 import { pageTransition, staggerContainer, fadeInUp } from "../utils/animations";
 import { Link } from "wouter";
 import { MapPin, Calendar, CheckCircle2 } from "lucide-react";
+import projectsCover from "../assets/images/projectsCover.png";
 
 const projectStats = [
   { value: "50+", label: "Completed Projects" },
@@ -26,7 +27,7 @@ export default function Projects() {
       <section className="relative min-h-[52vh] flex items-end overflow-hidden">
         {/* Full-width bg image */}
         <img
-          src="./src/assets/images/projectsCover.png"
+          src={projectsCover}
           alt="Projects Background"
           className="absolute inset-0 w-full h-full object-cover"
         />

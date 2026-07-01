@@ -5,6 +5,7 @@ import { timeline } from "../data/timeline";
 import { Target, Eye, HeartHandshake, Award, Shield, Globe, Users, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "../components/ui/button";
+import aboutCover from "../assets/images/aboutCover.png";
 
 const mission = {
   icon: <Target size={26} />,
@@ -102,7 +103,7 @@ export default function About() {
           {/* Right — industrial lab image */}
           <div className="hidden lg:block relative">
             <img
-              src="./src/assets/images/aboutCover.png"
+              src={aboutCover}
               alt="ArtChem Laboratory"
               className="absolute inset-0 w-full h-full object-cover"
             />

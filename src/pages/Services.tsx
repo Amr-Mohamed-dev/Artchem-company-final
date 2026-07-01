@@ -5,7 +5,7 @@ import { pageTransition, staggerContainer, fadeInUp } from "../utils/animations"
 import { ArrowRight, Wrench, Truck, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "../components/ui/button";
-
+import servicesCover from "../assets/images/servicesCover.png";
 const heroStats = [
   { value: "6+", label: "Service Lines" },
   { value: "100%", label: "Quality Assured" },
@@ -77,7 +77,7 @@ export default function Services() {
         {/* Right — image panel */}
         <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2">
           <img
-            src="./src/assets/images/servicesCover.png"
+            src={servicesCover}
             alt="Industrial Services"
             className="w-full h-full object-cover"
           />
