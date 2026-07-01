@@ -1,7 +1,7 @@
 import { Service } from "../types";
 import Industrial from "../assets/images/Industrial.png";
 import Quality from "../assets/images/quality.png";
-import Logistics from "../assets/images/logistics.png";
+import Logistics from "../assets/images/Logistics.png";
 
 export const services: Service[] = [
   {
