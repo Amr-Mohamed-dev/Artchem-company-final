@@ -4,6 +4,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "../../utils
 import { Button } from "../ui/button";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Award, Users, Globe } from "lucide-react";
+import industrychem from "../../assets/images/industrychem.png";
 
 const highlights = [
   "Uncompromising adherence to international quality standards",
@@ -43,7 +44,7 @@ export function CompanyOverview() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-[0_32px_64px_rgba(13,45,73,0.18)] aspect-[4/3]">
               <img
-                src="./src/assets/images/industrychem.png"
+                src={industrychem}
                 alt="ArtChem Chemical Laboratory"
                 className="w-full h-full object-cover"
               />

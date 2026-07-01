@@ -1,10 +1,7 @@
 import { Industry } from "../types";
-import Epoxysystems from "../assets/images/Epoxysystems.png";
 import Constructionchemicals from "../assets/images/contracting2.png";
-import Waterproofing from "../assets/images/Waterproofing.png";
 import Industrialcoatings from "../assets/images/Industrial.png";
-import Powderproducts from "../assets/images/Powderproducts.png";
-import Industrialcontracting from "../assets/images/Industrialcontracting.png";
+
 
 export const industries: Industry[] = [
   {
