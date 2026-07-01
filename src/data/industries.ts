@@ -13,7 +13,7 @@ export const industries: Industry[] = [
     name: "Construction Chemicals",
     description: "Tile adhesives, grouts, waterproofing compounds, and repair mortars engineered for demanding construction environments.",
     icon: "HardHat",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+    image: "./src/assets/images/contracting2.png"
   },
   {
     id: "waterproofing",
@@ -27,7 +27,7 @@ export const industries: Industry[] = [
     name: "Industrial Coatings",
     description: "Protective coatings for steel structures, pipelines, marine infrastructure, and industrial facilities requiring chemical and abrasion resistance.",
     icon: "PaintRoller",
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"
+    image: "./src/assets/images/Industrial.png"
   },
   {
     id: "powder-products",

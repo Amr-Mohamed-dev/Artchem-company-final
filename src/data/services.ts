@@ -16,7 +16,7 @@ export const services: Service[] = [
     shortDescription: "Expert execution of complex industrial and chemical engineering projects.",
     description: "Our contracting division delivers end-to-end industrial solutions, from facility design to full-scale chemical plant construction and retrofitting. We emphasize safety, compliance, and engineering excellence.",
     icon: "Building2",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    image: "./src/assets/images/contracting.png",
     features: ["Turnkey Project Execution", "Plant Retrofitting", "Safety & Compliance Engineering", "Maintenance Contracts"]
   },
   {
@@ -34,7 +34,7 @@ export const services: Service[] = [
     shortDescription: "Comprehensive hardware and operational supplies for continuous production.",
     description: "Providing essential hardware, safety equipment, and operational supplies required to keep industrial facilities running at peak efficiency.",
     icon: "Wrench",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    image: "./src/assets/images/Industrial.png",
     features: ["PPE & Safety Gear", "Industrial Hardware", "Maintenance Supplies", "Inventory Management"]
   },
   {
@@ -43,7 +43,7 @@ export const services: Service[] = [
     shortDescription: "Advanced analytical testing and certification for chemical products.",
     description: "State-of-the-art laboratory testing services to verify chemical composition, purity, and performance against international standards.",
     icon: "Microscope",
-    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=80",
+    image: "./src/assets/images/quality.png",
     features: ["Purity Analysis", "Performance Testing", "Certification Services", "Batch Verification"]
   },
   {
@@ -52,7 +52,7 @@ export const services: Service[] = [
     shortDescription: "Secure, specialized transport for hazardous and non-hazardous materials.",
     description: "Specialized fleet and warehousing solutions designed specifically for the safe and efficient transport of hazardous and non-hazardous chemical goods.",
     icon: "Truck",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
+    image: "./src/assets/images/logistics.png",
     features: ["Hazmat Transport", "Temperature Controlled Storage", "Fleet Management", "Real-time Tracking"]
   }
 ];

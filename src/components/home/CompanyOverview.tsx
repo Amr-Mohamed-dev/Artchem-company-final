@@ -43,7 +43,7 @@ export function CompanyOverview() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-[0_32px_64px_rgba(13,45,73,0.18)] aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=900&q=80"
+                src="./src/assets/images/industrychem.png"
                 alt="ArtChem Chemical Laboratory"
                 className="w-full h-full object-cover"
               />

@@ -77,7 +77,7 @@ export default function Services() {
         {/* Right — image panel */}
         <div className="hidden lg:block absolute inset-y-0 right-0 w-1/2">
           <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80"
+            src="./src/assets/images/servicesCover.png"
             alt="Industrial Services"
             className="w-full h-full object-cover"
           />

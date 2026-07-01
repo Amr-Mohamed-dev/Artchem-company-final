@@ -102,7 +102,7 @@ export default function About() {
           {/* Right — industrial lab image */}
           <div className="hidden lg:block relative">
             <img
-              src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80"
+              src="./src/assets/images/aboutCover.png"
               alt="ArtChem Laboratory"
               className="absolute inset-0 w-full h-full object-cover"
             />
