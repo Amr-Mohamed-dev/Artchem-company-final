@@ -1,7 +1,7 @@
 import { Project } from "../types";
 import Industrialconstruction from "../assets/images/Industrialconstruction.png";
-import Pipelinecorrosion from "../assets/images/Pipelinecorrosion.png";
-import Waterfacility from "../assets/images/Water-facility.png";
+import Pipelinecorrosion from "../assets/images/pipeline-corrosion.png";
+import Waterfacility from "../assets/images/water-facility.png";
 import Mininglogistics from "../assets/images/mining-logistics.png";
 import Pharmaceuticalimport from "../assets/images/pharmaceutical-import.png";
 export const projects: Project[] = [
