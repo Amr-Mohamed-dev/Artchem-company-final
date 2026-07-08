@@ -18,31 +18,27 @@ export function ProductCard({ product }: ProductCardProps) {
       className="group bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/40 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
     >
       {/* Image */}
-      <Link href={`/products/${product.id}`}>
-        <div className="relative h-52 overflow-hidden cursor-pointer bg-gray-50">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="relative h-52 overflow-hidden  bg-gray-50">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-          {/* Category badge */}
-          <div className="absolute top-3 left-3">
-            <span className="text-[9px] font-bold uppercase tracking-wider bg-primary text-white px-2.5 py-1 rounded-sm shadow-sm">
-              {product.subcategoryName}
-            </span>
-          </div>
+        {/* Category badge */}
+        <div className="absolute top-3 left-3">
+          <span className="text-[9px] font-bold uppercase tracking-wider bg-primary text-white px-2.5 py-1 rounded-sm shadow-sm">
+            {product.subcategoryName}
+          </span>
         </div>
-      </Link>
+      </div>
 
       {/* Content */}
       <div className="p-5 flex flex-col flex-grow">
-        <Link href={`/products/${product.id}`}>
-          <h3 className="text-base font-heading font-bold text-foreground hover:text-primary transition-colors cursor-pointer mb-2 leading-snug line-clamp-2">
-            {product.name}
-          </h3>
-        </Link>
+        <h3 className="text-base font-heading font-bold text-foreground hover:text-primary transition-colors  mb-2 leading-snug line-clamp-2">
+          {product.name}
+        </h3>
 
         <p className="text-xs text-muted-foreground mb-5 line-clamp-2 leading-relaxed flex-grow">
           {product.shortDescription}
@@ -61,16 +57,16 @@ export function ProductCard({ product }: ProductCardProps) {
             Inquire
           </Button>
 
-          <Button
+          {/* <Button
             variant="outline"
             size="icon"
-            asChild
             className="h-9 w-9 rounded-sm border-gray-200 hover:border-primary/50 hover:text-primary shrink-0"
+            onClick={() =>
+              openWhatsAppInquiry(product.name, companyInfo.whatsapp)
+            }
           >
-            <Link href={`/products/${product.id}`}>
-              <ArrowRight size={15} />
-            </Link>
-          </Button>
+            <ArrowRight size={15} />
+          </Button> */}
         </div>
       </div>
     </motion.div>

@@ -18,10 +18,6 @@ export interface Product {
   shortDescription: string;
   description: string;
   image: string;
-  gallery: string[];
-  features: string[];
-  specifications: Record<string, string>;
-  applications: string[];
 }
 
 export interface ProductCategory {

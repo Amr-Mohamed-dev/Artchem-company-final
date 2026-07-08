@@ -49,11 +49,11 @@ export default function ProductDetail() {
               <span className="hover:text-primary transition-colors cursor-pointer">{product.categoryName}</span>
             </Link>
             <ChevronRight size={11} />
-            <Link href={`/products/category/${product.category}/${product.subcategory}`}>
+            {/* <Link href={`/products/category/${product.category}/${product.subcategory}`}>
               <span className="hover:text-primary transition-colors cursor-pointer">{product.subcategoryName}</span>
             </Link>
             <ChevronRight size={11} />
-            <span className="text-foreground/60 font-normal normal-case tracking-normal truncate max-w-[200px]">{product.name}</span>
+            <span className="text-foreground/60 font-normal normal-case tracking-normal truncate max-w-[200px]">{product.name}</span> */}
           </nav>
         </div>
       </div>
@@ -74,27 +74,13 @@ export default function ProductDetail() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.04 }}
                   transition={{ duration: 0.3 }}
-                  src={product.gallery[activeImage] || product.image}
+                
                   alt={product.name}
                   className="w-full h-full object-cover"
                 />
               </AnimatePresence>
             </div>
-            {product.gallery.length > 1 && (
-              <div className="flex gap-3 overflow-x-auto pb-2">
-                {product.gallery.map((img, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveImage(idx)}
-                    className={`w-20 h-20 rounded-lg overflow-hidden border-2 shrink-0 transition-all ${
-                      activeImage === idx ? "border-primary shadow-md" : "border-gray-200 hover:border-primary/50"
-                    }`}
-                  >
-                    <img src={img} alt="" className="w-full h-full object-cover" />
-                  </button>
-                ))}
-              </div>
-            )}
+            
           </motion.div>
 
           {/* Info */}
@@ -125,14 +111,7 @@ export default function ProductDetail() {
               className="bg-[#F5F7FA] rounded-xl p-6 mb-8 border border-gray-200"
             >
               <h3 className="text-sm font-bold uppercase tracking-wider text-foreground mb-4">Product Features</h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {product.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5">
-                    <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm font-medium text-foreground/80">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+             
             </motion.div>
 
             {/* CTA */}
@@ -160,22 +139,7 @@ export default function ProductDetail() {
               <span className="w-1 h-6 bg-primary rounded-full" />
               Technical Specifications
             </h3>
-            <div className="rounded-xl border border-gray-200 overflow-hidden">
-              <table className="w-full text-sm text-left">
-                <tbody>
-                  {Object.entries(product.specifications).map(([key, value], idx) => (
-                    <tr key={key} className={idx % 2 === 0 ? "bg-[#F5F7FA]" : "bg-white"}>
-                      <th className="px-5 py-3.5 font-semibold text-foreground border-b border-gray-100 w-2/5 text-xs uppercase tracking-wide">
-                        {key}
-                      </th>
-                      <td className="px-5 py-3.5 text-muted-foreground border-b border-gray-100 text-sm">
-                        {value}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          
           </motion.div>
 
           <motion.div
@@ -187,17 +151,7 @@ export default function ProductDetail() {
               <span className="w-1 h-6 bg-primary rounded-full" />
               Primary Applications
             </h3>
-            <ul className="space-y-3">
-              {product.applications.map((app, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-center gap-3 p-4 bg-[#F5F7FA] rounded-xl border border-gray-200 hover:border-primary/30 transition-colors"
-                >
-                  <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
-                  <span className="font-medium text-sm text-foreground/80">{app}</span>
-                </li>
-              ))}
-            </ul>
+           
           </motion.div>
         </div>
 

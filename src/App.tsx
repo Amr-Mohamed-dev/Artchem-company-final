@@ -42,7 +42,7 @@ function AnimatedRoutes() {
         <Route path="/products" component={Products} />
         <Route path="/products/category/:categoryId" component={ProductCategory} />
         <Route path="/products/category/:categoryId/:subcategoryId" component={ProductSubcategory} />
-        <Route path="/products/:id" component={ProductDetail} />
+        {/* <Route path="/products/:id" component={ProductDetail} /> */}
         <Route path="/projects" component={Projects} />
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />

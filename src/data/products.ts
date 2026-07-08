@@ -1,98 +1,77 @@
 import { Product } from "../types";
+import parmelImg from "../assets/images/parmelx.png";
+import shekaraImg from "/shekara.png";
 
 export const products: Product[] = [
   // ─── EPOXY → RESIN ───────────────────────────────────────────────────────────
   {
     id: "epoxy-resin-standard",
-    name: "Standard Epoxy Resin",
+    name: "828",
     category: "epoxy",
     subcategory: "resin",
     categoryName: "Epoxy",
     subcategoryName: "Resin",
-    shortDescription: "Versatile bisphenol-A epoxy resin for coatings, adhesives, and composite applications.",
-    description: "Our Standard Epoxy Resin is a high-purity bisphenol-A based liquid epoxy, offering excellent adhesion, chemical resistance, and mechanical strength. Ideal for a wide range of industrial coatings and structural adhesives.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"],
-    features: ["High Purity", "Low Viscosity", "Excellent Adhesion", "Chemical Resistant"],
-    specifications: { "Epoxide Equivalent Weight": "185–195 g/eq", "Viscosity (25°C)": "10,000–15,000 mPa·s", "Appearance": "Clear Liquid", "Density": "1.16 g/cm³" },
-    applications: ["Industrial Coatings", "Structural Adhesives", "Fiber Reinforced Composites"]
+    shortDescription: "Solvent Free",
+    description:
+      "Our Standard Epoxy Resin is a high-purity bisphenol-A based liquid epoxy, offering excellent adhesion, chemical resistance, and mechanical strength. Ideal for a wide range of industrial coatings and structural adhesives.",
+    image: parmelImg,
+   
   },
   {
     id: "epoxy-resin-flexible",
-    name: "Flexible Epoxy Resin",
+    name: "X75",
     category: "epoxy",
     subcategory: "resin",
     categoryName: "Epoxy",
     subcategoryName: "Resin",
-    shortDescription: "Modified epoxy resin delivering enhanced flexibility and impact resistance for demanding environments.",
-    description: "A specially modified epoxy resin formulated to provide superior flexibility and toughness compared to standard bisphenol-A resins. Reduces crack propagation in cured systems exposed to thermal cycling and vibration.",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80"],
-    features: ["High Flexibility", "Impact Resistant", "Low Brittleness", "Thermal Stability"],
-    specifications: { "Flexibility Modifier": "Polyol-modified", "Viscosity (25°C)": "8,000–12,000 mPa·s", "Elongation at Break": ">15%", "Shore D Hardness": "70–75" },
-    applications: ["Vibration-Damping Adhesives", "Flexible Potting Compounds", "Sealants"]
-  },
-  {
-    id: "epoxy-resin-high-performance",
-    name: "High-Performance Epoxy Resin",
-    category: "epoxy",
-    subcategory: "resin",
-    categoryName: "Epoxy",
-    subcategoryName: "Resin",
-    shortDescription: "Premium high-solid epoxy resin engineered for extreme chemical and thermal resistance.",
-    description: "An advanced bisphenol-F based epoxy resin with exceptionally low viscosity and superior chemical resistance. Preferred for heavy-duty floor coatings, tank linings, and aggressive chemical containment systems.",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=800&q=80"],
-    features: ["Bisphenol-F Based", "Ultra-Low Viscosity", "Superior Chemical Resistance", "High HDT"],
-    specifications: { "Epoxide Equivalent Weight": "160–175 g/eq", "Viscosity (25°C)": "2,500–4,500 mPa·s", "Solids Content": "100%", "Color (Gardner)": "≤1" },
-    applications: ["Chemical Tank Linings", "Heavy-Duty Floor Coatings", "Offshore Structures"]
+    shortDescription: "Solvent Based",
+    description:
+      "A specially modified epoxy resin formulated to provide superior flexibility and toughness compared to standard bisphenol-A resins. Reduces crack propagation in cured systems exposed to thermal cycling and vibration.",
+    image:
+      "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80",
+  
   },
 
   // ─── EPOXY → HARDENER ────────────────────────────────────────────────────────
   {
     id: "amine-hardener",
-    name: "Aliphatic Amine Hardener",
+    name: "118",
     category: "epoxy",
     subcategory: "hardener",
     categoryName: "Epoxy",
     subcategoryName: "Hardener",
-    shortDescription: "Fast-curing aliphatic amine hardener providing excellent mechanical properties at ambient temperature.",
-    description: "A low-viscosity aliphatic amine hardener designed for room-temperature curing of bisphenol-A and bisphenol-F epoxy resins. Delivers outstanding hardness, chemical resistance, and adhesion on a variety of substrates.",
-    image: "https://images.unsplash.com/photo-1614033096703-ff20a4b5c2c9?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1614033096703-ff20a4b5c2c9?w=800&q=80"],
-    features: ["Ambient Cure", "Low Viscosity", "Fast Gelation", "Good Blush Resistance"],
-    specifications: { "Amine Value": "350–380 mg KOH/g", "Viscosity (25°C)": "500–800 mPa·s", "Mixing Ratio": "1:3 by weight with std. resin", "Pot Life (100g)": "30–40 min" },
-    applications: ["Protective Coatings", "Floor Systems", "Marine Coatings"]
+    shortDescription: "Modified cycloaliphatic polyamine Adduct",
+    description:
+      "A low-viscosity aliphatic amine hardener designed for room-temperature curing of bisphenol-A and bisphenol-F epoxy resins. Delivers outstanding hardness, chemical resistance, and adhesion on a variety of substrates.",
+    image:
+      "https://images.unsplash.com/photo-1614033096703-ff20a4b5c2c9?w=600&q=80",
+
   },
   {
     id: "polyamide-hardener",
-    name: "Polyamide Hardener",
+    name: "332",
     category: "epoxy",
     subcategory: "hardener",
     categoryName: "Epoxy",
     subcategoryName: "Hardener",
-    shortDescription: "Versatile polyamide hardener offering improved flexibility, adhesion, and blush-free cure.",
-    description: "Derived from dimerized fatty acids and polyamines, this polyamide hardener imparts excellent toughness and flexibility to cured epoxy systems. Provides outstanding wet adhesion and is widely used in marine and industrial maintenance coatings.",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"],
-    features: ["Excellent Toughness", "Blush-Free", "Wet Surface Adhesion", "Low Toxicity"],
-    specifications: { "Amine Value": "200–250 mg KOH/g", "Viscosity (40°C)": "2,000–5,000 mPa·s", "Color (Gardner)": "≤8", "Density": "0.97 g/cm³" },
-    applications: ["Marine Paints", "Industrial Maintenance", "Primer Formulations"]
+    shortDescription: "Modified cycloaliphatic polyamine Adduct",
+    description:
+      "Derived from dimerized fatty acids and polyamines, this polyamide hardener imparts excellent toughness and flexibility to cured epoxy systems. Provides outstanding wet adhesion and is widely used in marine and industrial maintenance coatings.",
+    image:
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80",
   },
   {
     id: "cycloaliphatic-hardener",
-    name: "Cycloaliphatic Amine Hardener",
+    name: "324",
     category: "epoxy",
     subcategory: "hardener",
     categoryName: "Epoxy",
     subcategoryName: "Hardener",
-    shortDescription: "UV-stable cycloaliphatic amine hardener ideal for clear coatings and exterior applications.",
-    description: "A premium cycloaliphatic amine hardener offering excellent UV stability, low yellowing, and high gloss retention. Essential for exterior coatings, decorative floors, and any application requiring long-term color stability.",
-    image: "https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=800&q=80"],
-    features: ["UV Stable", "Low Yellowing", "High Gloss", "Exterior Grade"],
-    specifications: { "Amine Value": "420–460 mg KOH/g", "Viscosity (25°C)": "50–100 mPa·s", "AHEW": "55–60 g/eq", "Flash Point": ">60°C" },
-    applications: ["Decorative Floor Coatings", "Outdoor Structures", "Clear Topcoats"]
+    shortDescription: "Modified cycloaliphatic polyamine",
+    description:
+      "A premium cycloaliphatic amine hardener offering excellent UV stability, low yellowing, and high gloss retention. Essential for exterior coatings, decorative floors, and any application requiring long-term color stability.",
+    image:
+      "https://images.unsplash.com/photo-1518152006812-edab29b069ac?w=600&q=80",
   },
 
   // ─── EPOXY → ACCELERATORS ─────────────────────────────────────────────────────
@@ -103,13 +82,12 @@ export const products: Product[] = [
     subcategory: "accelerators",
     categoryName: "Epoxy",
     subcategoryName: "Accelerators",
-    shortDescription: "2,4,6-tris(dimethylaminomethyl)phenol — the industry standard epoxy cure accelerator.",
-    description: "DMP-30 (2,4,6-Tris(dimethylaminomethyl)phenol) is the benchmark tertiary amine accelerator for epoxy systems. Used at low addition levels (0.5–3%), it dramatically reduces gel time and accelerates full cure without adversely affecting final film properties.",
-    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80"],
-    features: ["Industry Standard", "Low Addition Level", "Broad Compatibility", "Consistent Performance"],
-    specifications: { "Active Content": ">98%", "Viscosity (25°C)": "100–200 mPa·s", "Typical Dosage": "0.5–3 phr", "Flash Point": "112°C" },
-    applications: ["Floor Coatings", "Casting Resins", "Structural Adhesives"]
+    shortDescription:
+      "2,4,6-tris(dimethylaminomethyl)phenol — the industry standard epoxy cure accelerator.",
+    description:
+      "DMP-30 (2,4,6-Tris(dimethylaminomethyl)phenol) is the benchmark tertiary amine accelerator for epoxy systems. Used at low addition levels (0.5–3%), it dramatically reduces gel time and accelerates full cure without adversely affecting final film properties.",
+    image:
+      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80",
   },
   {
     id: "benzyl-alcohol-accelerator",
@@ -118,13 +96,12 @@ export const products: Product[] = [
     subcategory: "accelerators",
     categoryName: "Epoxy",
     subcategoryName: "Accelerators",
-    shortDescription: "Reactive diluent and accelerator that lowers viscosity while promoting low-temperature cure.",
-    description: "Benzyl Alcohol serves as both a reactive plasticizer and a cure accelerator for epoxy/amine systems. Particularly effective at low temperatures, it reduces system viscosity and improves workability in cold-climate applications.",
-    image: "https://images.unsplash.com/photo-1611698906418-b6b1de4ad6a1?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1611698906418-b6b1de4ad6a1?w=800&q=80"],
-    features: ["Viscosity Reducer", "Cold-Cure Capable", "Reactive Diluent", "Improved Workability"],
-    specifications: { "Purity": ">99%", "Boiling Point": "205°C", "Typical Dosage": "5–15 phr", "Refractive Index": "1.538–1.541" },
-    applications: ["Cold Weather Application", "Self-Leveling Floors", "Industrial Grouting"]
+    shortDescription:
+      "Reactive diluent and accelerator that lowers viscosity while promoting low-temperature cure.",
+    description:
+      "Benzyl Alcohol serves as both a reactive plasticizer and a cure accelerator for epoxy/amine systems. Particularly effective at low temperatures, it reduces system viscosity and improves workability in cold-climate applications.",
+    image:
+      "https://images.unsplash.com/photo-1611698906418-b6b1de4ad6a1?w=600&q=80",
   },
 
   // ─── EPOXY → ADDITIVES ───────────────────────────────────────────────────────
@@ -135,13 +112,12 @@ export const products: Product[] = [
     subcategory: "additives",
     categoryName: "Epoxy",
     subcategoryName: "Additives",
-    shortDescription: "Silicone-free defoamer specifically formulated to eliminate air bubbles in epoxy systems.",
-    description: "A high-efficiency, silicone-free defoamer designed to prevent and eliminate foam and micro-bubbles in epoxy coating and casting systems. Ensures smooth, crater-free surfaces without impairing intercoat adhesion.",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80"],
-    features: ["Silicone-Free", "Crater Prevention", "No Adhesion Impairment", "Broad Compatibility"],
-    specifications: { "Type": "Polyol-based", "Recommended Dosage": "0.3–1.0%", "Density": "0.98–1.02 g/cm³", "Compatibility": "Water/Solvent-borne" },
-    applications: ["Self-Leveling Floors", "Casting Systems", "High-Gloss Topcoats"]
+    shortDescription:
+      "Silicone-free defoamer specifically formulated to eliminate air bubbles in epoxy systems.",
+    description:
+      "A high-efficiency, silicone-free defoamer designed to prevent and eliminate foam and micro-bubbles in epoxy coating and casting systems. Ensures smooth, crater-free surfaces without impairing intercoat adhesion.",
+    image:
+      "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80",
   },
   {
     id: "thixotropic-agent",
@@ -150,13 +126,12 @@ export const products: Product[] = [
     subcategory: "additives",
     categoryName: "Epoxy",
     subcategoryName: "Additives",
-    shortDescription: "Fumed silica-based rheology modifier preventing sagging on vertical surfaces.",
-    description: "A treated hydrophobic fumed silica that provides excellent thixotropy in solvent-free epoxy systems. Prevents sagging and running on vertical and overhead surfaces while maintaining easy application at shear.",
-    image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80"],
-    features: ["Anti-Sag", "Hydrophobic Surface Treatment", "Easy Dispersion", "Consistent Rheology"],
-    specifications: { "Type": "Hydrophobic Fumed Silica", "BET Surface Area": "100–130 m²/g", "Moisture Content": "<0.5%", "Typical Dosage": "1–5%" },
-    applications: ["Vertical Surface Coatings", "Patching Mortars", "Adhesive Pastes"]
+    shortDescription:
+      "Fumed silica-based rheology modifier preventing sagging on vertical surfaces.",
+    description:
+      "A treated hydrophobic fumed silica that provides excellent thixotropy in solvent-free epoxy systems. Prevents sagging and running on vertical and overhead surfaces while maintaining easy application at shear.",
+    image:
+      "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&q=80",
   },
   {
     id: "uv-stabilizer",
@@ -165,13 +140,12 @@ export const products: Product[] = [
     subcategory: "additives",
     categoryName: "Epoxy",
     subcategoryName: "Additives",
-    shortDescription: "HALS-based UV light stabilizer protecting epoxy coatings from photodegradation and yellowing.",
-    description: "A hindered amine light stabilizer (HALS) blend that provides superior UV protection for outdoor and UV-exposed epoxy coating systems. Significantly extends gloss and color retention under intense sunlight.",
-    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&q=80"],
-    features: ["HALS Technology", "Superior UV Protection", "Yellowing Prevention", "Color Stable"],
-    specifications: { "Type": "HALS Blend", "Recommended Dosage": "0.5–2.0%", "Molecular Weight": ">1,500 g/mol", "Solubility": "Resin-soluble" },
-    applications: ["Exterior Topcoats", "Decorative Flooring", "UV-Resistant Coatings"]
+    shortDescription:
+      "HALS-based UV light stabilizer protecting epoxy coatings from photodegradation and yellowing.",
+    description:
+      "A hindered amine light stabilizer (HALS) blend that provides superior UV protection for outdoor and UV-exposed epoxy coating systems. Significantly extends gloss and color retention under intense sunlight.",
+    image:
+      "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80",
   },
 
   // ─── POWDER → CONSTRUCTION POWDERS ───────────────────────────────────────────
@@ -179,92 +153,32 @@ export const products: Product[] = [
     id: "tile-adhesive-powder",
     name: "Tile Adhesive Powder",
     category: "powder",
-    subcategory: "construction-powders",
+    subcategory: "coated",
     categoryName: "Powder",
-    subcategoryName: "Construction Powders",
-    shortDescription: "Polymer-modified cementitious tile adhesive for ceramic, porcelain, and natural stone.",
-    description: "A high-performance, ready-to-mix tile adhesive powder combining Portland cement, graded aggregates, and polymer additives. Provides excellent open time, non-slump performance, and superior bond strength for interior and exterior tiling.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"],
-    features: ["Polymer-Modified", "Non-Slump", "Extended Open Time", "Frost Resistant"],
-    specifications: { "Mixing Ratio": "4.5–5 L water per 25 kg bag", "Pot Life": "3–4 hours", "Open Time": "20–30 min", "Compressive Strength (28d)": ">12 N/mm²" },
-    applications: ["Ceramic & Porcelain Tiles", "Natural Stone", "External Façades"]
+    subcategoryName: "Coated",
+    shortDescription:
+      "Polymer-modified cementitious tile adhesive for ceramic, porcelain, and natural stone.",
+    description:
+      "A high-performance, ready-to-mix tile adhesive powder combining Portland cement, graded aggregates, and polymer additives. Provides excellent open time, non-slump performance, and superior bond strength for interior and exterior tiling.",
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80",
   },
-  {
-    id: "waterproofing-powder",
-    name: "Cementitious Waterproofing Powder",
-    category: "powder",
-    subcategory: "construction-powders",
-    categoryName: "Powder",
-    subcategoryName: "Construction Powders",
-    shortDescription: "Two-component crystalline waterproofing system forming an integral barrier in concrete.",
-    description: "A crystalline cementitious waterproofing compound that penetrates concrete and forms insoluble crystals within the matrix, permanently blocking water ingress. Effective for positive and negative side waterproofing.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80"],
-    features: ["Crystalline Technology", "Positive & Negative Side", "Self-Sealing Cracks", "Non-Toxic"],
-    specifications: { "Type": "Crystalline Cementitious", "Coverage": "1–1.5 kg/m²/coat", "Water Pressure Resistance": ">7 bar", "Substrate": "Concrete, Masonry" },
-    applications: ["Basement Waterproofing", "Water Tanks", "Swimming Pools", "Tunnels"]
-  },
-  {
-    id: "grout-powder",
-    name: "Epoxy Grout Powder",
-    category: "powder",
-    subcategory: "construction-powders",
-    categoryName: "Powder",
-    subcategoryName: "Construction Powders",
-    shortDescription: "High-strength epoxy-modified grout powder for joints in chemical-resistant tiling installations.",
-    description: "A three-component epoxy grout system — resin, hardener, and filler powder — providing exceptional chemical resistance, stain resistance, and mechanical strength for tile joints in food processing plants, laboratories, and industrial kitchens.",
-    image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=800&q=80"],
-    features: ["Epoxy-Modified", "Chemical Resistant", "Stain Proof", "Food-Safe Options"],
-    specifications: { "Joint Width": "2–20 mm", "Compressive Strength (28d)": ">45 N/mm²", "Chemical Resistance": "Excellent", "Temperature Range": "-20°C to +100°C" },
-    applications: ["Food & Beverage Plants", "Pharmaceutical Facilities", "Industrial Kitchens"]
-  },
+
 
   // ─── POWDER → INDUSTRIAL POWDERS ─────────────────────────────────────────────
   {
     id: "calcium-carbonate",
     name: "Precipitated Calcium Carbonate",
     category: "powder",
-    subcategory: "industrial-powders",
+    subcategory: "uncoated",
     categoryName: "Powder",
-    subcategoryName: "Industrial Powders",
-    shortDescription: "Ultra-fine precipitated calcium carbonate as filler and extender for paints, plastics, and rubber.",
-    description: "High-brightness precipitated calcium carbonate (PCC) with controlled particle size distribution. Acts as a functional filler, improving whiteness, opacity, and rheology in paints, paper coatings, sealants, and polymer composites.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"],
-    features: ["Ultra-Fine", "High Brightness", "Controlled PSD", "Surface-Coated Options"],
-    specifications: { "Purity (CaCO₃)": ">98%", "Whiteness (ISO)": ">96%", "Mean Particle Size": "0.7–3.0 µm", "Moisture": "<0.3%" },
-    applications: ["Paints & Coatings", "Plastics Compounding", "Sealants & Adhesives", "Paper"]
+    subcategoryName: "UnCoated",
+    shortDescription:
+      "Ultra-fine precipitated calcium carbonate as filler and extender for paints, plastics, and rubber.",
+    description:
+      "High-brightness precipitated calcium carbonate (PCC) with controlled particle size distribution. Acts as a functional filler, improving whiteness, opacity, and rheology in paints, paper coatings, sealants, and polymer composites.",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
   },
-  {
-    id: "talc-powder",
-    name: "Industrial Talc Powder",
-    category: "powder",
-    subcategory: "industrial-powders",
-    categoryName: "Powder",
-    subcategoryName: "Industrial Powders",
-    shortDescription: "Micronized talc providing superior reinforcement, barrier properties, and nucleation in polymers.",
-    description: "Micronized lamellar talc offering excellent thermal stability, chemical inertness, and platelet-shaped particle morphology. Enhances stiffness, dimensional stability, and scratch resistance in polypropylene, polyolefins, and coatings.",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80"],
-    features: ["Lamellar Morphology", "High Aspect Ratio", "Chemical Inert", "Thermal Stable"],
-    specifications: { "MgO Content": "31–33%", "Whiteness (R457)": ">90%", "D50 Particle Size": "2–10 µm", "Bulk Density": "0.3–0.5 g/cm³" },
-    applications: ["Polypropylene Compounding", "Automotive Parts", "Coatings & Plastics"]
-  },
-  {
-    id: "silica-powder",
-    name: "Crystalline Silica Powder",
-    category: "powder",
-    subcategory: "industrial-powders",
-    categoryName: "Powder",
-    subcategoryName: "Industrial Powders",
-    shortDescription: "High-purity quartz silica powder for refractory, rubber, glass, and construction applications.",
-    description: "A carefully processed and size-classified crystalline quartz powder providing high SiO₂ purity, hardness, and chemical inertness. Used as a functional filler across refractory materials, rubber, fiber cement, and specialty glass manufacturing.",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=600&q=80",
-    gallery: ["https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=800&q=80"],
-    features: ["High SiO₂ Purity", "Multiple Mesh Sizes", "Chemical Inert", "Consistent Quality"],
-    specifications: { "SiO₂ Content": ">99.5%", "Mohs Hardness": "7", "Available Mesh": "50–400 mesh", "Moisture": "<0.1%" },
-    applications: ["Refractory Materials", "Rubber Compounding", "Fiber Cement", "Glass Manufacturing"]
-  },
+  
 ];
