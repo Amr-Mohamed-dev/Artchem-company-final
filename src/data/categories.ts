@@ -33,8 +33,8 @@ export const productCategories: ProductCategory[] = [
         categoryId: "epoxy",
       },
       {
-        id: "accelerators",
-        name: "Accelerators",
+        id: "solvents",
+        name: "Solvents",
         description:
           "Tertiary amine and reactive accelerators to shorten cure time and enable low-temperature curing.",
         image: acceleratorsImg,

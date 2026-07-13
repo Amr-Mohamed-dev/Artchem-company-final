@@ -1,7 +1,8 @@
 import { Industry } from "../types";
 import Constructionchemicals from "../assets/images/contracting2.png";
 import Industrialcoatings from "../assets/images/Industrial.png";
-
+import epoxysystemImg from "../assets/images/epoxysyytem.png";
+import industryImg from '../assets/images/industry.png'
 
 export const industries: Industry[] = [
   {
@@ -9,8 +10,7 @@ export const industries: Industry[] = [
     name: "Epoxy Systems",
     description: "High-performance epoxy resins, hardeners, and additives for industrial flooring, corrosion protection, and structural adhesives.",
     icon: "FlaskConical",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-  },
+    image: epoxysystemImg  },
   {
     id: "construction",
     name: "Construction Chemicals",
@@ -44,6 +44,6 @@ export const industries: Industry[] = [
     name: "Industrial Contracting",
     description: "Turnkey industrial contracting services spanning surface preparation, epoxy flooring installation, and protective coating application.",
     icon: "Wrench",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
+    image: industryImg,
   }
 ];

@@ -1,7 +1,9 @@
 import { Service } from "../types";
 import Industrial from "../assets/images/Industrial.png";
-import Quality from "../assets/images/quality.png";
+import Quality from "../assets/images/qualitytest.png";
 import Logistics from "../assets/images/Logistics.png";
+import contractingServImg from '../assets/images/ContractingServices.png'
+import chemicalSupImg from '../assets/images/chemicalSup.png'
 
 export const services: Service[] = [
   {
@@ -10,7 +12,7 @@ export const services: Service[] = [
     shortDescription: "Premium grade industrial chemicals and raw materials for large-scale manufacturing.",
     description: "We supply a comprehensive range of premium grade industrial chemicals, raw materials, and specialized compounds. Our global sourcing network ensures consistent quality and reliable delivery for manufacturing, processing, and industrial applications.",
     icon: "FlaskConical",
-    image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80",
+    image: chemicalSupImg,
     features: ["ISO Certified Quality", "Global Sourcing Network", "Bulk Storage Capabilities", "Just-in-Time Delivery"]
   },
   {
@@ -19,7 +21,7 @@ export const services: Service[] = [
     shortDescription: "Expert execution of complex industrial and chemical engineering projects.",
     description: "Our contracting division delivers end-to-end industrial solutions, from facility design to full-scale chemical plant construction and retrofitting. We emphasize safety, compliance, and engineering excellence.",
     icon: "Building2",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+    image: contractingServImg,
     features: ["Turnkey Project Execution", "Plant Retrofitting", "Safety & Compliance Engineering", "Maintenance Contracts"]
   },
   {
