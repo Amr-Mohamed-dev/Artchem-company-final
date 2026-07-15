@@ -4,14 +4,12 @@ import { navigation } from "../../data/navigation";
 import { socialLinks } from "../../data/socialLinks";
 import { productCategories } from "../../data/categories";
 import artchemLogo from "../../assets/images/mainlogo.webp";
-import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight, ExternalLink } from "lucide-react";
 import * as SiIcons from "react-icons/si";
 import * as FaIcons from "react-icons/fa6";
 
-function SocialIconCompact({ social }: { social: typeof socialLinks[0] }) {
-  const Icon =
-  (SiIcons as any)[social.icon] ||
-  (FaIcons as any)[social.icon];
+function SocialIconCompact({ social }: { social: (typeof socialLinks)[0] }) {
+  const Icon = (SiIcons as any)[social.icon] || (FaIcons as any)[social.icon];
 
   return (
     <a
@@ -22,7 +20,12 @@ function SocialIconCompact({ social }: { social: typeof socialLinks[0] }) {
       title={social.name}
       className="group flex items-center justify-center w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-200 border border-white/10 hover:border-white/25"
     >
-      {Icon && <Icon size={14} className="text-white/70 group-hover:text-white transition-colors" />}
+      {Icon && (
+        <Icon
+          size={14}
+          className="text-white/70 group-hover:text-white transition-colors"
+        />
+      )}
     </a>
   );
 }
@@ -34,15 +37,14 @@ export function Footer() {
     <footer className="bg-sidebar text-sidebar-foreground pt-14 pb-6 border-t-[3px] border-primary">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
-
           {/* Brand Column */}
           <div className="space-y-2">
-          <img
-                src={artchemLogo}
-                alt={companyInfo.name}
-                className="h-[48px] md:h-[88px] w-auto object-contain block"
-                style={{ imageRendering: "auto" }}
-              />
+            <img
+              src={artchemLogo}
+              alt={companyInfo.name}
+              className="h-[48px] md:h-[88px] w-auto object-contain block"
+              style={{ imageRendering: "auto" }}
+            />
             <p className="text-sidebar-accent-foreground leading-relaxed text-sm">
               {companyInfo.description}
             </p>
@@ -143,20 +145,49 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3 text-sidebar-accent-foreground text-sm">
                 <Clock className="text-primary shrink-0 mt-0.5" size={13} />
-                <span className="leading-relaxed">{companyInfo.workingHours}</span>
+                <span className="leading-relaxed">
+                  {companyInfo.workingHours}
+                </span>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/8 pt-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-sidebar-accent-foreground text-xs tracking-wide text-center sm:text-left opacity-60">
+        <div className="border-t border-white/8 pt-5 flex flex-col lg:flex-row items-center justify-between gap-4">
+          <p className="text-sidebar-accent-foreground text-xs tracking-wide text-center lg:text-left opacity-60">
             &copy; {currentYear} {companyInfo.fullName}. All rights reserved.
           </p>
+
+          <a
+            href="https://amr-developer-portfolio.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-1.5 text-xs tracking-wide text-sidebar-accent-foreground opacity-70 hover:opacity-100 transition-all duration-300"
+          >
+            <span>Designed &amp; Developed by</span>
+
+            <span className="text-primary font-medium group-hover:underline underline-offset-4">
+              Amr Mohamed
+            </span>
+
+            <ExternalLink className="h-3 w-3 text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+
           <div className="flex gap-5 text-xs text-sidebar-accent-foreground opacity-50">
-            <a href="#" className="hover:opacity-100 hover:text-white transition-all">Privacy Policy</a>
-            <a href="#" className="hover:opacity-100 hover:text-white transition-all">Terms of Service</a>
+            <a
+              href="#"
+              className="hover:opacity-100 hover:text-white transition-all"
+            >
+              Privacy Policy
+            </a>
+
+            <a
+              href="#"
+              className="hover:opacity-100 hover:text-white transition-all"
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>
