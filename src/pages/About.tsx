@@ -5,6 +5,7 @@ import { Target, Eye, HeartHandshake, Award, Shield, Globe, Users, ArrowRight } 
 import { Link } from "wouter";
 import { Button } from "../components/ui/button";
 import aboutCover from "../assets/images/aboutCover.webp";
+import ourLegacyimg from '../assets/images/heroCover.webp';
 
 const mission = {
   icon: <Target size={26} />,
@@ -134,7 +135,7 @@ export default function About() {
             >
               <div className="rounded-2xl overflow-hidden shadow-[0_24px_56px_rgba(13,45,73,0.13)] aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=900&q=80"
+                  src={ourLegacyimg}
                   alt="ArtChem Facility"
                   className="w-full h-full object-cover"
                 />

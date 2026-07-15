@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "../ui/button";
 import { ArrowRight, MessageSquare, FlaskConical, Package, ShieldCheck, Globe2 } from "lucide-react";
+import heroCover from '../../assets/images/heroCover.webp';
 
 const HEX_PATTERN = `
   <svg xmlns='http://www.w3.org/2000/svg' width='120' height='104'>
@@ -31,7 +32,7 @@ export function HeroSection() {
       {/* Parallax bg image */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 scale-110">
         <img
-          src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=1920&q=80"
+          src={heroCover}
           alt="Industrial Facility"
           className="w-full h-full object-cover"
         />

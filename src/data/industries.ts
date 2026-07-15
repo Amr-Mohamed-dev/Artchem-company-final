@@ -2,7 +2,10 @@ import { Industry } from "../types";
 import Constructionchemicals from "../assets/images/contracting2.webp";
 import Industrialcoatings from "../assets/images/Industrial.webp";
 import epoxysystemImg from "../assets/images/epoxysyytem.webp";
-import industryImg from '../assets/images/industry.webp'
+import industryImg from '../assets/images/industry.webp';
+import waterproofingImg from '../assets/images/water.webp';
+import powderImg from '../assets/images/powderproducts.webp';
+
 
 export const industries: Industry[] = [
   {
@@ -23,7 +26,7 @@ export const industries: Industry[] = [
     name: "Waterproofing",
     description: "Crystalline and membrane waterproofing systems protecting basements, tanks, rooftops, and below-grade structures from water ingress.",
     icon: "Droplets",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80"
+    image: waterproofingImg
   },
   {
     id: "industrial-coatings",
@@ -37,7 +40,7 @@ export const industries: Industry[] = [
     name: "Powder Products",
     description: "Ultra-fine mineral fillers — calcium carbonate, talc, and silica — serving paints, plastics, rubber, and composite manufacturing.",
     icon: "Package",
-    image: "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=800&q=80"
+    image: powderImg
   },
   {
     id: "contracting",
