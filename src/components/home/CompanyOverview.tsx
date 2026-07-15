@@ -4,7 +4,7 @@ import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "../../utils
 import { Button } from "../ui/button";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Award, Users, Globe } from "lucide-react";
-import industrychem from "../../assets/images/industrychem.png";
+import industrychem from "../../assets/images/industrychem.webp";
 
 const highlights = [
   "Uncompromising adherence to international quality standards",

@@ -4,7 +4,7 @@ import { ProjectCard } from "../components/projects/ProjectCard";
 import { pageTransition, staggerContainer, fadeInUp } from "../utils/animations";
 import { Link } from "wouter";
 import { MapPin, Calendar, CheckCircle2 } from "lucide-react";
-import projectsCover from "../assets/images/projectsCover.png";
+import projectsCover from "../assets/images/projectsCover.webp";
 
 const projectStats = [
   { value: "50+", label: "Completed Projects" },

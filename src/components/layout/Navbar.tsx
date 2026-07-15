@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronRight, ArrowUpRight } from "lucide-react";
 import { navigation } from "../../data/navigation";
-import artchemLogo from "../../assets/images/mainlogo.png";
+import artchemLogo from "../../assets/images/mainlogo.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import { companyInfo } from "../../data/companyInfo";
 

@@ -1,8 +1,8 @@
 import { Industry } from "../types";
-import Constructionchemicals from "../assets/images/contracting2.png";
-import Industrialcoatings from "../assets/images/Industrial.png";
-import epoxysystemImg from "../assets/images/epoxysyytem.png";
-import industryImg from '../assets/images/industry.png'
+import Constructionchemicals from "../assets/images/contracting2.webp";
+import Industrialcoatings from "../assets/images/Industrial.webp";
+import epoxysystemImg from "../assets/images/epoxysyytem.webp";
+import industryImg from '../assets/images/industry.webp'
 
 export const industries: Industry[] = [
   {

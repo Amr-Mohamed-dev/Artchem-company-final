@@ -3,7 +3,7 @@ import { companyInfo } from "../../data/companyInfo";
 import { navigation } from "../../data/navigation";
 import { socialLinks } from "../../data/socialLinks";
 import { productCategories } from "../../data/categories";
-import artchemLogo from "../../assets/images/mainlogo.png";
+import artchemLogo from "../../assets/images/mainlogo.webp";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import * as SiIcons from "react-icons/si";
 import * as FaIcons from "react-icons/fa6";

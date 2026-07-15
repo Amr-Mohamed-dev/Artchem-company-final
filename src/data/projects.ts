@@ -1,9 +1,9 @@
 import { Project } from "../types";
-import Industrialconstruction from "../assets/images/Industrialconstruction.png";
-import Pipelinecorrosion from "../assets/images/Pipelinecorrosion.png";
-import Waterfacility from "../assets/images/water-facility.png";
-import Mininglogistics from "../assets/images/mining-logistics.png";
-import Pharmaceuticalimport from "../assets/images/pharmaceutical-import.png";
+import Industrialconstruction from "../assets/images/Industrialconstruction.webp";
+import Pipelinecorrosion from "../assets/images/Pipelinecorrosion.webp";
+import Waterfacility from "../assets/images/water-facility.webp";
+import Mininglogistics from "../assets/images/mining-logistics.webp";
+import Pharmaceuticalimport from "../assets/images/pharmaceutical-import.webp";
 export const projects: Project[] = [
   {
     id: "mega-plant-supply",

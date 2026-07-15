@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import aramchemLogo from "../../assets/images/mainlogo.png";
+import aramchemLogo from "../../assets/images/mainlogo.webp";
 
 export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);

@@ -6,7 +6,7 @@ import { companyInfo } from "../data/companyInfo";
 import { openWhatsAppInquiry } from "../utils/whatsapp";
 import { pageTransition, fadeInUp, staggerContainer } from "../utils/animations";
 import { Button } from "../components/ui/button";
-import { ArrowLeft, MessageCircle, CheckCircle2, ChevronRight } from "lucide-react";
+import { MessageCircle, ChevronRight } from "lucide-react";
 import { ProductCard } from "../components/products/ProductCard";
 
 export default function ProductDetail() {

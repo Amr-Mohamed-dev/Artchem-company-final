@@ -1,9 +1,9 @@
 import { Service } from "../types";
-import Industrial from "../assets/images/Industrial.png";
-import Quality from "../assets/images/qualitytest.png";
-import Logistics from "../assets/images/Logistics.png";
-import contractingServImg from '../assets/images/ContractingServices.png'
-import chemicalSupImg from '../assets/images/chemicalSup.png'
+import Industrial from "../assets/images/Industrial.webp";
+import Quality from "../assets/images/qualitytest.webp";
+import Logistics from "../assets/images/Logistics.webp";
+import contractingServImg from '../assets/images/ContractingServices.webp'
+import chemicalSupImg from '../assets/images/chemicalSup.webp'
 
 export const services: Service[] = [
   {

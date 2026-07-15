@@ -1,10 +1,9 @@
-import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Product } from "../../types";
 import { companyInfo } from "../../data/companyInfo";
 import { openWhatsAppInquiry } from "../../utils/whatsapp";
 import { Button } from "../ui/button";
-import { MessageCircle, ArrowRight } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 interface ProductCardProps {
   product: Product;

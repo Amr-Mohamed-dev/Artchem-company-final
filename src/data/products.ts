@@ -1,6 +1,6 @@
 import { Product } from "../types";
-import parmelImg from "../assets/images/parmelx.png";
-import shekaraImg from "../assets/images/shekarax.png";
+import parmelImg from "../assets/images/parmelx.webp";
+import shekaraImg from "../assets/images/shekarax.webp";
 
 export const products: Product[] = [
   // ─── EPOXY → RESIN ───────────────────────────────────────────────────────────

@@ -22,7 +22,6 @@ import ServiceDetail from "./pages/ServiceDetail";
 import Products from "./pages/Products";
 import ProductCategory from "./pages/ProductCategory";
 import ProductSubcategory from "./pages/ProductSubcategory";
-import ProductDetail from "./pages/ProductDetail";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import NotFound from "@/pages/not-found";

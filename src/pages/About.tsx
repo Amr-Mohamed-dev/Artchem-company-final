@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { pageTransition, staggerContainer, fadeInUp, fadeInLeft } from "../utils/animations";
-import { companyInfo } from "../data/companyInfo";
 import { timeline } from "../data/timeline";
 import { Target, Eye, HeartHandshake, Award, Shield, Globe, Users, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "../components/ui/button";
-import aboutCover from "../assets/images/aboutCover.png";
+import aboutCover from "../assets/images/aboutCover.webp";
 
 const mission = {
   icon: <Target size={26} />,

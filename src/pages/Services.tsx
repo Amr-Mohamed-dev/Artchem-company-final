@@ -5,7 +5,7 @@ import { pageTransition, staggerContainer, fadeInUp } from "../utils/animations"
 import { ArrowRight, Wrench, Truck, ShieldCheck } from "lucide-react";
 import { Link } from "wouter";
 import { Button } from "../components/ui/button";
-import servicesCover from "../assets/images/services.png";
+import servicesCover from "../assets/images/services.webp";
 const heroStats = [
   { value: "6+", label: "Service Lines" },
   { value: "100%", label: "Quality Assured" },

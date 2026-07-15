@@ -1,12 +1,12 @@
 import { ProductCategory } from "../types";
-import epoxyImg from "../assets/images/epoxy.png";
-import powderImg from '../assets/images/powder.png';
-import resinImg from "../assets/images/resin.png";
-import hardenerImg from "../assets/images/hardener.png";
-import acceleratorsImg from "../assets/images/Accelerators.png";
-import additivesImg from "../assets/images/Additives.png";
-import coatedImg from '../assets/images/coated.png';
-import uncoatedImg from '../assets/images/uncoated.png';
+import epoxyImg from "../assets/images/epoxy.webp";
+import powderImg from '../assets/images/powder.webp';
+import resinImg from "../assets/images/resin.webp";
+import hardenerImg from "../assets/images/hardener.webp";
+import acceleratorsImg from "../assets/images/Accelerators.webp";
+import additivesImg from "../assets/images/Additives.webp";
+import coatedImg from '../assets/images/coated.webp';
+import uncoatedImg from '../assets/images/uncoated.webp';
 
 export const productCategories: ProductCategory[] = [
   {
