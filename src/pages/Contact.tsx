@@ -14,6 +14,9 @@ import { MapPin, Phone, Mail, Clock, MessageCircle, Send, ArrowRight } from "luc
 import * as SiIcons from "react-icons/si";
 import { openWhatsAppInquiry } from "../utils/whatsapp";
 import { Link } from "wouter";
+import emailjs from "@emailjs/browser";
+
+
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -34,21 +37,52 @@ const contactDetails = [
 
 export default function Contact() {
   const { toast } = useToast();
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactFormValues>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormValues>({
     resolver: zodResolver(contactSchema),
   });
 
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    toast({
-      title: "Message Sent Successfully",
-      description: "Our team will respond within 24 hours.",
-    });
-    reset();
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          subject: data.subject,
+          message: data.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+
+      toast({
+        title: "Message Sent Successfully",
+        description: "Our team will respond within 24 hours.",
+      });
+
+      reset();
+    } catch (error) {
+      console.error(error);
+
+      toast({
+        title: "Failed to Send",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
