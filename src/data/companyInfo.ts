@@ -6,6 +6,6 @@ export const companyInfo = {
   address: "Cairo, Egypt",
   phone: "+20 155 502 2253",
   whatsapp: "+201555022253",
-  email: "artchemcomp@gmail.com",
+  email: " info@artchemco.com",
   workingHours: "Sun–Thu: 9:00 AM – 6:00 PM (EET)",
 };

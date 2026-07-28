@@ -25,7 +25,9 @@ const contactSchema = z.object({
   name: z.string().min(2, "Name is required"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(5, "Phone is required"),
-  subject: z.string().min(5, "Subject is required"),
+
+  department: z.enum(["info", "sales"]),
+
   message: z.string().min(10, "Message is too short"),
 });
 
@@ -73,9 +75,12 @@ export default function Contact() {
   });
 
   const onSubmit = async (data: ContactFormValues) => {
+    console.log("Submit clicked");
+    console.log(data);
     setIsSubmitting(true);
 
     try {
+      console.log("Sending...");
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -83,7 +88,14 @@ export default function Contact() {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          subject: data.subject,
+
+          department: data.department,
+
+          to_email:
+            data.department === "sales" ?
+              "sales@artchemco.com"
+            : "info@artchemco.com",
+
           message: data.message,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
@@ -95,7 +107,9 @@ export default function Contact() {
       });
 
       reset();
+      console.log("Success:");
     } catch (error) {
+      console.error("EmailJS Error:", error);
       console.error(error);
 
       toast({
@@ -239,7 +253,12 @@ export default function Contact() {
                   </h2>
                 </div>
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                <form
+                  onSubmit={handleSubmit(onSubmit, (errors) => {
+                    console.log("Validation Errors:", errors);
+                  })}
+                  className="space-y-4"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
                       <label className="text-[11px] font-bold text-foreground uppercase tracking-wider">
@@ -289,17 +308,16 @@ export default function Contact() {
                     </div>
                     <div className="space-y-1.5">
                       <label className="text-[11px] font-bold text-foreground uppercase tracking-wider">
-                        Subject *
+                        Department *
                       </label>
-                      <Input
-                        {...register("subject")}
-                        className={`h-11 bg-[#F5F7FA] border-gray-200 focus:border-primary text-sm ${errors.subject ? "border-destructive" : ""}`}
-                      />
-                      {errors.subject && (
-                        <p className="text-xs text-destructive">
-                          {errors.subject.message}
-                        </p>
-                      )}
+
+                      <select
+                        {...register("department")}
+                        className="h-11 w-full rounded-md bg-[#F5F7FA] border border-gray-200 px-3 text-sm focus:border-primary"
+                      >
+                        <option value="info">General Information</option>
+                        <option value="sales">Sales Department</option>
+                      </select>
                     </div>
                   </div>
 
