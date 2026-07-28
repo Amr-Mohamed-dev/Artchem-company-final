@@ -2,8 +2,15 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "../ui/button";
-import { ArrowRight, MessageSquare, FlaskConical, Package, ShieldCheck, Globe2 } from "lucide-react";
-import heroCover from '../../assets/images/heroCover.webp';
+import {
+  ArrowRight,
+  MessageSquare,
+  FlaskConical,
+  Package,
+  ShieldCheck,
+  Globe2,
+} from "lucide-react";
+import heroCover from "../../assets/images/heroCover.webp";
 
 const HEX_PATTERN = `
   <svg xmlns='http://www.w3.org/2000/svg' width='120' height='104'>
@@ -14,21 +21,26 @@ const HEX_PATTERN = `
 const HEX_BG = `url("data:image/svg+xml,${encodeURIComponent(HEX_PATTERN)}")`;
 
 const stats = [
-  { value: "15+", label: "Years Experience", icon: <ShieldCheck size={18} /> },
-  { value: "500+", label: "Products", icon: <Package size={18} /> },
-  { value: "100+", label: "Clients Served", icon: <Globe2 size={18} /> },
-  { value: "50+", label: "Projects Done", icon: <FlaskConical size={18} /> },
+  { value: "10+", label: "Years Experience", icon: <ShieldCheck size={18} /> },
+  { value: "50+", label: "Premium Products", icon: <Package size={18} /> },
+  { value: "99%", label: "Client Satisfaction", icon: <Globe2 size={18} /> },
+  { value: "12+", label: "Countries Served", icon: <FlaskConical size={18} /> },
 ];
 
 export function HeroSection() {
   const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
 
   return (
-    <section ref={ref} className="relative h-[100dvh] min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
-
+    <section
+      ref={ref}
+      className="relative h-[100dvh] min-h-[700px] flex flex-col items-center justify-center overflow-hidden"
+    >
       {/* Parallax bg image */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 z-0 scale-110">
         <img
@@ -53,14 +65,20 @@ export function HeroSection() {
       </div>
 
       {/* Main content */}
-      <motion.div style={{ y: textY }} className="container mx-auto px-6 relative z-10 pt-[72px] flex-1 flex items-center">
+      <motion.div
+        style={{ y: textY }}
+        className="container mx-auto px-6 relative z-10 pt-[72px] flex-1 flex items-center"
+      >
         <div className="max-w-[780px]">
-
           {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.7,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
           >
             <span className="inline-flex items-center gap-2.5 py-1.5 px-4 border border-primary/50 bg-primary/10 backdrop-blur-sm text-primary font-bold tracking-[0.22em] text-[10px] uppercase mb-8 rounded-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -72,7 +90,11 @@ export function HeroSection() {
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.85,
+              delay: 0.3,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="text-[44px] md:text-[64px] lg:text-[76px] font-heading font-extrabold text-white leading-[1.04] mb-6 tracking-tight"
           >
             Chemistry That{" "}
@@ -82,11 +104,14 @@ export function HeroSection() {
                 className="absolute -bottom-1 left-0 h-[3px] bg-primary rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 0.9, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.9,
+                  delay: 1.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
               />
             </span>
-            <br className="hidden sm:block" />{" "}
-            Industry.
+            <br className="hidden sm:block" /> Industry.
           </motion.h1>
 
           {/* Subheadline */}
@@ -96,14 +121,20 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="text-[17px] md:text-[19px] text-white/65 mb-10 max-w-[560px] leading-relaxed font-light"
           >
-            ArtChem delivers world-class epoxy systems, powder products, and industrial chemicals — backed by a global supply network and expert technical support.
+            ArtChem delivers world-class epoxy systems, powder products, and
+            industrial chemicals — backed by a global supply network and expert
+            technical support.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: 0.8,
+              delay: 0.65,
+              ease: [0.22, 1, 0.36, 1],
+            }}
             className="flex flex-col sm:flex-row gap-3"
           >
             <Button
@@ -143,7 +174,11 @@ export function HeroSection() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.6,
+                  delay: 1.0 + i * 0.1,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="relative bg-white/8 backdrop-blur-md border border-white/12 rounded-xl px-5 py-4 flex items-center gap-4 hover:bg-white/12 transition-all duration-300 group overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -151,8 +186,12 @@ export function HeroSection() {
                   {stat.icon}
                 </div>
                 <div className="relative z-10">
-                  <div className="text-[22px] font-heading font-extrabold text-white leading-none">{stat.value}</div>
-                  <div className="text-[10px] text-white/50 uppercase tracking-widest mt-0.5 font-semibold">{stat.label}</div>
+                  <div className="text-[22px] font-heading font-extrabold text-white leading-none">
+                    {stat.value}
+                  </div>
+                  <div className="text-[10px] text-white/50 uppercase tracking-widest mt-0.5 font-semibold">
+                    {stat.label}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -167,7 +206,9 @@ export function HeroSection() {
         transition={{ delay: 1.8, duration: 1 }}
         className="absolute bottom-24 md:bottom-8 right-8 flex flex-col items-center gap-1.5"
       >
-        <span className="text-[9px] text-white/30 uppercase tracking-[0.25em] font-semibold">Scroll</span>
+        <span className="text-[9px] text-white/30 uppercase tracking-[0.25em] font-semibold">
+          Scroll
+        </span>
         <div className="w-px h-10 bg-white/15 overflow-hidden rounded-full">
           <motion.div
             animate={{ y: ["-100%", "200%"] }}
